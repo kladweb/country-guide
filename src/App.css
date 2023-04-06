@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  max-width: 90rem;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  cursor: default;
+}
+
+.main-header {
+  position: fixed;
+  width: 100%;
+  background-color: #939999;
+  box-shadow: 0 0 1.5rem 0 #afb8b8;
+  font-size: 1rem;
+  z-index: 50;
+}
+
+.main-header__brand {
+  display: inline-block;
+  margin: 0.5em 0 0.2em;
+  vertical-align: middle;
+}
+
+.main-header__logo {
+  max-height: 4em;
+}
+
+.main-header__name {
+  display: inline-block;
+  padding: 0 1rem;
+  font-size: 2em;
+  font-weight: 600;
+  vertical-align: middle;
+}
+
+.main-nav {
+  position: relative;
+  width: calc(100% - 22rem);
+  display: inline-block;
+  vertical-align: middle;
+  text-align: right;
+}
+
+main {
+  padding-top: 7rem;
+  /*background: aqua;*/
+}
