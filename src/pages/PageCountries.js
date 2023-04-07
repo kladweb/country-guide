@@ -12,25 +12,21 @@ export const PageCountries = () => {
 
   useEffect(
     () => {
-      load()
+      if (country.dataLoadState !== 2) {
+        dispatch(countriesLoad);
+      }
     },
     []
   );
 
-  function load() {
-    dispatch(countriesLoad);
-  }
-
-  // console.log('IH DATA', appData.countries);
-  console.log('MY DATA', country.data);
   return (
     <>
       {(country.dataLoadState === 0) && 'no data'}
       {(country.dataLoadState === 1) && 'loading...'}
-      {(country.dataLoadState === 3) && 'error ' + country.dataLoadError}
       {(country.dataLoadState === 2) &&
         <Countries countries={country.data}/>
       }
+      {(country.dataLoadState === 3) && 'error ' + country.dataLoadError}
     </>
   );
 

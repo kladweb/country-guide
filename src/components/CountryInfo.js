@@ -1,10 +1,12 @@
 import React from 'react';
 
-export const CountryInfo = ({ fio, balance } ) => {
+export const CountryInfo = ({name, population}) => {
+  //делаем отступы между тысячными:
+  population = population.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1 ');
 
   return (
     <h1>
-      клиент &laquo;{fio}&raquo;, баланс {balance}
+      Страна &laquo;{name}&raquo;, Население {population}
     </h1>
   );
 

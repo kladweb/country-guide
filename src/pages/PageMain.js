@@ -5,10 +5,9 @@ import { CountryList } from '../components/CountryList';
 
 export const PageMain = () => {
 
-  const appData2 = useSelector (state => state.country.data);
-
+  const appData = useSelector(state => state.country.data);
   return (
-    <CountryList countries={appData2} />
+    <CountryList/>
   );
 
 }

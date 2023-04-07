@@ -8,7 +8,6 @@ export async function countriesLoad(dispatch) {
     // const response = await fetch('/json/package.json');
     if (response.ok) {
       const data = await response.json();
-      // console.log('MY DATA', data);
       dispatch(updateLoadState({state: 2, error: null}));
       dispatch(updateData(data));
     } else {

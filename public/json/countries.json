@@ -1,68 +1,79 @@
-{
-  "ad": {
+[
+  {
+    "code": "ad",
     "name": "Andorra",
-    "id": "6",
+    "id": 6,
     "population": "77543",
     "area": "468"
   },
-  "ae": {
+  {
+    "code": "ae",
     "name": "United Arab Emirates",
-    "id": "237",
+    "id": 237,
     "population": "9770529",
     "area": "83600"
   },
-  "ag": {
+  {
+    "code": "ag",
     "name": "Antigua and Barbuda",
-    "id": "10",
+    "id": 10,
     "population": "96453",
     "area": "442"
   },
-  "al": {
+  {
+    "code": "al",
     "name": "Albania",
-    "id": "3",
+    "id": 3,
     "population": "2862427",
     "area": "28748"
   },
-  "am": {
+  {
+    "code": "am",
     "name": "Armenia",
-    "id": "12",
+    "id": 12,
     "population": "2957500",
     "area": "29743"
   },
-  "ao": {
+  {
+    "code": "ao",
     "name": "Angola",
-    "id": "7",
+    "id": 7,
     "population": "31127674",
     "area": "1246700"
   },
-  "aq": {
+  {
+    "code": "aq",
     "name": "Antarctica",
-    "id": "9",
+    "id": 9,
     "population": "3000",
     "area": "14000000"
   },
-  "ar": {
+  {
+    "code": "ar",
     "name": "Argentina",
-    "id": "11",
+    "id": 11,
     "population": "44938712",
     "area": "2780400"
   },
-  "at": {
+  {
+    "code": "at",
     "name": "Austria",
-    "id": "15",
+    "id": 15,
     "population": "8902600",
     "area": "83871"
   },
-  "au": {
+  {
+    "code": "au",
     "name": "Australia",
-    "id": "14",
+    "id": 14,
     "population": "25627280",
     "area": "7692020"
   },
-  "az": {
+  {
+    "code": "az",
     "name": "Azerbaijan",
-    "id": "16",
+    "id": 16,
     "population": "10067108",
     "area": "86600"
   }
-}
+]

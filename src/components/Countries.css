@@ -5,10 +5,19 @@
 /*  background-color: lightyellow;*/
 /*}*/
 
+.CountryList {
+  text-align: center;
+  margin: 0 auto;
+}
+
 .CountryListName {
   font-weight: bold;
 }
 
 .CountriesGroup {
-  padding-top: 5px;
+  margin: 0;
+  padding: 10px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
 }

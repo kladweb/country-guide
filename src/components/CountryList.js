@@ -1,10 +1,10 @@
 import React from 'react';
 
-export const CountryList = ({ name } ) => {
+export const CountryList = () => {
 
   return (
     <h1>
-      Компания &laquo;{name}&raquo;
+      ГЛАВНАЯ СТРАНИЦА
     </h1>
   );
 

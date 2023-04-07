@@ -5,10 +5,9 @@ import { Country } from './Country';
 
 import './Countries.css';
 
-export const Countries = ({name, countries}) => {
-
+export const Countries = ({countries}) => {
   const countriesCode = countries.map(client =>
-    <Country key={client.id} id={client.id} fio={client.fio}/>
+    <Country key={client.code} code={client.code} name={client.name} population={client.population}/>
   );
 
   return (

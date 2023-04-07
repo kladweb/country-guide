@@ -6,23 +6,22 @@ import { CountryInfo } from '../components/CountryInfo';
 
 // import { appData } from '../appData';
 
-export const PageClient = () => {
+export const PageCountry = () => {
 
-  const appData2 = useSelector (state => state.country.data);
-  // console.log('STATE:',appData2.data);
-  // console.log('appData:',appData);
+  const appData = useSelector(state => state.country.data);
 
   const params = useParams();
   console.log(params);
   // since the route looks like that: <Route path="/client/:clid" element={<Page_Client/>} />
   // it means useParams hook returns what's in the URI after "/client/" as "clid" property (it's string)
 
-  const clientId = parseInt(params.clid);
+  const countryId = params.clid;
+  // const countryId = parseInt(params.clid);
 
-  const clientData = appData2.find(c => c.id === clientId);
+  const countryData = appData.find(c => c.code === countryId);
 
   return (
-    <CountryInfo fio={clientData.fio}/>
+    <CountryInfo name={countryData.name} population={countryData.population}/>
   );
 
 }
