@@ -5,7 +5,7 @@ import { Countries } from '../components/Countries';
 import { useDispatch, useSelector } from "react-redux";
 import { countriesLoad } from "../redux/countriesLoad";
 
-export const PageClients = () => {
+export const PageCountries = () => {
 
   const dispatch = useDispatch();
   const country = useSelector(state => state.country);

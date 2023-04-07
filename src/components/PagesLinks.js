@@ -14,8 +14,8 @@ export const PagesLinks = () => {
 
   return (
     <div>
-      <NavLink to="/countries" className={getLinkClass}>Countries</NavLink>
       <NavLink to="/" end className={getLinkClass}>Main</NavLink>
+      <NavLink to="/countries" className={getLinkClass}>Countries</NavLink>
       <NavLink to="/company" className={getLinkClass}>About us</NavLink>
     </div>
   );

@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { CountryList } from '../components/CountryList';
 
-export const PageCompany = () => {
+export const PageMain = () => {
 
   const appData2 = useSelector (state => state.country.data);
 
