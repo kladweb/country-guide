@@ -12,14 +12,10 @@ export const Countries = ({countries}) => {
 
   return (
     <>
-      <div className='CountryList'>
-        <div className='content'>
-          {/*<div className='CountryListName'>Компания &laquo;{name}&raquo;</div>*/}
-          <div className='CountriesGroup'>
-            {countriesCode}
-            <Outlet/>
-          </div>
-        </div>
+      {/*<div className='CountryListName'>Компания &laquo;{name}&raquo;</div>*/}
+      <div className='CountriesGroup'>
+        {countriesCode}
+        <Outlet/>
       </div>
     </>
   );
