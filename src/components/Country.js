@@ -8,9 +8,9 @@ export const Country = ({code, name, population}) => {
     <div className='Country'>
       <NavLink to={"/countries/" + code} className="CountryName">
         <div className='flag-frame'>
-          <img className='flag-preview' src={`/img/flags/${code}.png`} alt="My Image"/>
+          <img className='flag-preview' src={`/img/flags/${code}.png`} alt={name}/>
+          <span className='country-title'>{name}</span>
         </div>
-        {name}
       </NavLink>
       {/*<span className='CountryPopulation'>{population}</span>*/}
     </div>

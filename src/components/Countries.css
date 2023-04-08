@@ -6,8 +6,13 @@
 /*}*/
 
 .CountryList {
-  text-align: center;
-  margin: 0 auto;
+  /*margin: 0 auto;*/
+  /*text-align: center;*/
+  background-image: linear-gradient(rgba(144, 91, 75, 0.75), rgba(144, 91, 75, 0.75)), url(../../public/img/background/background_01.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .CountryListName {
@@ -15,9 +20,20 @@
 }
 
 .CountriesGroup {
+  /*position: relative;*/
   margin: 0;
-  padding: 10px;
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(4, 1fr);
+  padding: 3rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
+
+/*.CountriesGroup {*/
+/*  margin: 0;*/
+/*  padding: 10px;*/
+/*  display: grid;*/
+/*  grid-gap: 10px;*/
+/*  grid-template-columns: repeat(4, 1fr);*/
+/*}*/
+
+

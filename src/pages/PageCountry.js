@@ -11,7 +11,7 @@ export const PageCountry = () => {
   const appData = useSelector(state => state.country.data);
 
   const params = useParams();
-  console.log(params);
+  // console.log(params);
   // since the route looks like that: <Route path="/client/:clid" element={<Page_Client/>} />
   // it means useParams hook returns what's in the URI after "/client/" as "clid" property (it's string)
 
@@ -21,7 +21,12 @@ export const PageCountry = () => {
   const countryData = appData.find(c => c.code === countryId);
 
   return (
-    <CountryInfo name={countryData.name} population={countryData.population}/>
+    <CountryInfo
+      code={countryData.code}
+      name={countryData.name}
+      population={countryData.population}
+      area={countryData.area}
+    />
   );
 
 }

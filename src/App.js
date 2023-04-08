@@ -24,9 +24,7 @@ export const App = () => (
         </div>
       </header>
       <main>
-        <div className='content'>
-          <PagesRouter/>
-        </div>
+        <PagesRouter/>
       </main>
     </BrowserRouter>
   </Provider>

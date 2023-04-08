@@ -1,6 +1,8 @@
 .PageLink {
-    color: black;
-    margin-right: 10px;
+    color: #b1091d;
+    margin-right: 1.5rem;
+    font-size: 1.5rem;
+    text-decoration: none;
 }
 
 .ActivePageLink {

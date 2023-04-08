@@ -7,22 +7,29 @@
 }
 
 .Country {
-  width: 20rem;
+  /*width: 20rem;*/
   display: inline-block;
-  margin: 1rem 0.5rem;
+  margin: 1.5rem;
   text-align: center;
 }
 
 .CountryName {
+  display: block;
   width: 100%;
+  font-size: 1.25rem;
+  color: #FFF;
+  text-decoration: none;
 }
 
 .flag-frame {
+  /*position: relative;*/
   display: block;
   margin: 0 auto;
   width: 17rem;
-  height: 9rem;
-  background-color: lemonchiffon;
+  /*height: 9rem;*/
+  background-color: rgba(234, 234, 234, 0.3);
+  border: solid 1px #eaeaea;
+  border-radius: 10px;
 }
 
 .flag-preview {
@@ -34,4 +41,7 @@
   object-fit: contain;
 }
 
-
+.country-title {
+  display: block;
+  padding-bottom: 0.5rem;
+}

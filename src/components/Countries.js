@@ -13,12 +13,14 @@ export const Countries = ({countries}) => {
   return (
     <>
       <div className='CountryList'>
-        {/*<div className='CountryListName'>Компания &laquo;{name}&raquo;</div>*/}
-        <div className='CountriesGroup'>
-          {countriesCode}
+        <div className='content'>
+          {/*<div className='CountryListName'>Компания &laquo;{name}&raquo;</div>*/}
+          <div className='CountriesGroup'>
+            {countriesCode}
+            <Outlet/>
+          </div>
         </div>
       </div>
-      <Outlet/>
     </>
   );
 }
