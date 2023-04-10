@@ -1,0 +1,37 @@
+.CountryAbout {
+  position: relative;
+  height: calc(100vh - 4.75rem);
+  background-image: linear-gradient(rgba(122, 77, 64, 0.83),
+  rgba(122, 77, 64, 0.84)), url(../../public/img/background/background_03.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.CountryAbout h1 {
+  padding-top: 3rem;
+  font-size: 3rem;
+  font-weight: 400;
+  color: #eaeaea;
+  text-align: center;
+}
+
+.CountryAbout p {
+  margin-top: 3rem;
+  font-size: 1.75rem;
+  text-indent: 3rem;
+  line-height: 3rem;
+  color: #eaeaea;
+  text-align: justify;
+}
+
+.js-project {
+  /*display: inline-block;*/
+  text-decoration: none;
+  color: #eaeaea;
+}
+
+.js-project:hover {
+  color: #61ff10;
+}

@@ -16,6 +16,7 @@ export const PagesLinks = () => {
     <div>
       <NavLink to="/" end className={getLinkClass}>Main</NavLink>
       <NavLink to="/countries" className={getLinkClass}>Countries</NavLink>
+      <NavLink to="/favorites" className={getLinkClass}>Favorites</NavLink>
       <NavLink to="/about" className={getLinkClass}>About us</NavLink>
     </div>
   );
