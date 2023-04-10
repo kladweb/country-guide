@@ -14,7 +14,7 @@ export const PagesRouter = () => {
         <Route path="/countries" element={<PageCountries/>}>
           <Route path=":clid" element={<PageCountry/>}/>
         </Route>
-        <Route path="/company" element={<PageAbout/>} />
+        <Route path="/about" element={<PageAbout/>} />
       </Routes>
     );
     

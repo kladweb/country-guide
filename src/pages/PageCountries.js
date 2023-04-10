@@ -22,24 +22,22 @@ export const PageCountries = () => {
   );
 
   return (
-    <>
-      <div className='CountryList'>
-        <div className='content'>
-          {(country.dataLoadState === 0) &&
-            <LoadingStatus loadStatus='no data'/>
-          }
-          {(country.dataLoadState === 1) &&
-            <LoadingStatus loadStatus='loading...'/>
-          }
-          {(country.dataLoadState === 2) &&
-            <Countries countries={country.data}/>
-          }
-          {(country.dataLoadState === 3) &&
-            <LoadingStatus loadStatus={'error ' + country.dataLoadError}/>
-          }
-        </div>
+    <div className='CountryList'>
+      <div className='content'>
+        {(country.dataLoadState === 0) &&
+          <LoadingStatus loadStatus='no data'/>
+        }
+        {(country.dataLoadState === 1) &&
+          <LoadingStatus loadStatus='loading...'/>
+        }
+        {(country.dataLoadState === 2) &&
+          <Countries countries={country.data}/>
+        }
+        {(country.dataLoadState === 3) &&
+          <LoadingStatus loadStatus={'error ' + country.dataLoadError}/>
+        }
       </div>
-    </>
+    </div>
 
     // <>
     //   <div className='CountryList'>

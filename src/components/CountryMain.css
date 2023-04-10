@@ -1,0 +1,51 @@
+.CountryMain {
+  position: relative;
+  height: calc(100vh - 4.75rem);
+  background-image: linear-gradient(rgba(147, 153, 153, 0.5), rgba(147, 153, 153, 0.5)), url(../../public/img/background/background_02.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.CountryMain h1 {
+  padding-top: 2rem;
+  font-size: 3rem;
+  color: #61ff10;
+  text-align: center;
+}
+
+.CountryMain p {
+  font-size: 1.5rem;
+  text-indent: 2rem;
+  color: #eaeaea;
+}
+
+.main-logo {
+  display: block;
+  margin: 3rem auto;
+  max-width: 40vmin;
+}
+
+.main-button {
+  display: block;
+  width: fit-content;
+  margin: 1rem auto;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  border: solid 5px rgba(234, 234, 234, 0.8);
+  border-radius: 16px;
+  text-align: center;
+  background-image: linear-gradient(rgba(246, 173, 85, 0.8), rgba(225, 132, 11, 0.8));
+  /*background-image: linear-gradient(#f6ad55, #e1840b);*/
+}
+
+.main-button:hover {
+  background-image: linear-gradient(#f6ad55, #e1840b);
+  border: solid 5px #eaeaea;
+}
+
+.main-button__name {
+  font-size: 1.5rem;
+  color: #FFF;
+}

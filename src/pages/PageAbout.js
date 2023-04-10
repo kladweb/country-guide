@@ -1,12 +1,13 @@
 import React from 'react';
+import { CountryAbout } from "../components/CountryAbout";
 
 export const PageAbout = () => {
-          
-    return (
-      <div>
-        <h1>A mobile company website</h1>
-        Welcome!
+
+  return (
+    <div className='CountryAbout'>
+      <div className='content'>
+        <CountryAbout/>
       </div>
-    );
-    
-};
+    </div>
+  );
+}
