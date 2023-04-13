@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { NavLink, Outlet, useNavigate } from 'react-router-dom';
+import { NavLink, Outlet, useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from "react-redux";
 
 import { Country } from './Country';
@@ -7,10 +7,14 @@ import { Country } from './Country';
 import './Countries.css';
 
 export const Countries = ({countries, page}) => {
+  const params = useParams();
+  const part = params.part;
   let navigate = useNavigate();
   useEffect(
     () => {
-      navigate('/countries/all');
+      if (!part) {
+        navigate('/countries/all');
+      }
     },
     []
   );

@@ -8,7 +8,7 @@ export const CountryInfo = ({code, name, population, area}) => {
   area = area.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1 ');
 
   return (
-    <div className='country-info'>
+    <div className='country-info show'>
       <div className='content country-info__content'>
         <h2 className='sectionInfo country-info__name'>&laquo;{name}&raquo;</h2>
         <img className='sectionInfo flag-preview-info' src={`/img/flags/${code}.png`} alt={name}/>

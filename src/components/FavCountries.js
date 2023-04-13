@@ -8,7 +8,6 @@ import { Outlet } from "react-router-dom";
 export const FavCountries = ({countries, favCountries}) => {
   
   let favCountriesObj = countries.filter(item => favCountries.includes(item.code));
-  console.log('yyy', favCountries);
   const countriesCode = favCountriesObj.map(client =>
     <Country
       key={client.code}

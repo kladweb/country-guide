@@ -16,7 +16,6 @@ export const PageCountries = () => {
   const dispatch = useDispatch();
   const countries = useSelector(state => state.countries);
   const favCountries = useSelector(state => state.favCountries.data);
-  console.log('favCountries.data', favCountries);
 
   useEffect(
     () => {
@@ -24,9 +23,6 @@ export const PageCountries = () => {
         dispatch(countriesLoad);
         dispatch(favCountriesLoad);
       }
-      // return () => {
-      //   window.localStorage.setItem('favCountries', JSON.stringify(favCountries));
-      // }
     },
     []
   );
@@ -56,23 +52,5 @@ export const PageCountries = () => {
         }
       </div>
     </div>
-
-    // <>
-    //   <div className='CountryList'>
-    //     <div className='content'>
-    //       {(country.dataLoadState === 0) && 'no data'}
-    //       {(country.dataLoadState === 1) &&
-    //         <div className='loading'>
-    //           <span className='loading-stastus'>loading...</span>
-    //         </div>
-    //       }
-    //       {(country.dataLoadState === 2) &&
-    //         <Countries countries={country.data}/>
-    //       }
-    //       {(country.dataLoadState === 3) && 'error ' + country.dataLoadError}
-    //     </div>
-    //   </div>
-    // </>
   );
-
 }

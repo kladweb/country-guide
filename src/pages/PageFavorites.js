@@ -13,7 +13,6 @@ export const PageFavorites = () => {
   const dispatch = useDispatch();
   const countries = useSelector(state => state.countries)
   const favCountries = useSelector(state => state.favCountries.data);
-  console.log('favCountries', favCountries);
 
   useEffect(
     () => {

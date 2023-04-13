@@ -13,9 +13,20 @@
   background: #7a4d40;
   border-top: solid 5px #939999;
   border-bottom: solid 5px #939999;
-  /*border-radius: 30px 30px 0 0;*/
-  /*box-sizing: border-box;*/
+  /*transform: translateY(50%);*/
+  /*transition: transform 0.5s ease-in-out, opacity 0.2s ease-in-out;*/
+  animation: show-info .5s ease-in-out;
 }
+
+@keyframes show-info {
+  from {transform: translateY(100%); }
+  to {transform: translateY(0); }
+}
+
+/*.show {*/
+/*  transform: translateY(0);*/
+/*  transition: transform 0.5s ease-in-out, opacity 0.2s ease-in-out;*/
+/*}*/
 
 .country-info__content {
   display: flex;
