@@ -3,7 +3,7 @@ import { Outlet, useParams } from "react-router-dom";
 import { Country } from "../components/Country";
 import { useSelector } from "react-redux";
 
-export const PageCountriesNav = () => {
+export const PageCountriesList = () => {
   const country = useSelector(state => state.countries);
   const countries = country.currentData;
   const params = useParams();

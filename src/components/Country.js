@@ -7,17 +7,18 @@ import { updateFavData } from "../redux/favCountriesSlice";
 
 export const Country = ({code, name, page}) => {
   const dispatch = useDispatch();
-  const data = useSelector(state => state.favCountries.data);
+  const dataFav = useSelector(state => state.favCountries.data);
   const toggleFav = (code) => {
-    let newData = [...data];
+    let newData = [...dataFav];
     if (newData.includes(code)) {
-      newData = data.filter(item => (item !== code));
+      newData = dataFav.filter(item => (item !== code));
     } else {
       newData.push(code);
     }
     dispatch(updateFavData(newData));
   };
-  const isFav = data.includes(code);
+  // console.log(dataFav)
+  const isFav = dataFav.includes(code);
 
   // console.log(data);
   // console.log('render');

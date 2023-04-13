@@ -76,5 +76,5 @@
 
 .isFav {
   border-color: yellow;
-  transition: 2s;
+  transition: 0.5s;
 }

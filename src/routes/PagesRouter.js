@@ -4,7 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import { PageAbout } from '../pages/PageAbout';
 import { PageMain } from '../pages/PageMain';
 import { PageCountries } from '../pages/PageCountries';
-import { PageCountriesNav } from '../pages/PageCountriesNav';
+import { PageCountriesList } from '../pages/PageCountriesList';
 import { PageCountry } from '../pages/PageCountry';
 import { PageFavorites } from '../pages/PageFavorites';
 
@@ -14,7 +14,7 @@ export const PagesRouter = () => {
     <Routes>
       <Route path="/" element={<PageMain/>}/>
       <Route path="/countries" element={<PageCountries/>}>
-        <Route path=":part" element={<PageCountriesNav/>}>
+        <Route path=":part" element={<PageCountriesList/>}>
           <Route path=":countid" element={<PageCountry/>}/>
         </Route>
       </Route>

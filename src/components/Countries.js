@@ -35,15 +35,6 @@ export const Countries = ({countries, page}) => {
     return className;
   }
 
-  // const countriesCode = countries.map(client =>
-  //   <Country
-  //     key={client.code}
-  //     code={client.code}
-  //     name={client.name}
-  //     page={`/countries/${page}/`}
-  //   />
-  // );
-
   return (
     <>
       <div className='navPages'>
@@ -54,10 +45,6 @@ export const Countries = ({countries, page}) => {
         {navPagesCode()}
       </div>
       <Outlet/>
-      {/*<div className='CountriesGroup'>*/}
-      {/*  {countriesCode}*/}
-      {/*  <Outlet/>*/}
-      {/*</div>*/}
     </>
   );
 }

@@ -10,7 +10,8 @@ export const favCountriesSlice = createSlice({
   reducers: {
     updateFavData: (state, action) => {
       state.data = action.payload;
-      // console.log('state.data', state.data);
+      console.log('state.data', action.payload);
+      window.localStorage.setItem('favCountries', JSON.stringify(action.payload));
     },
   }
 });

@@ -6,22 +6,32 @@ import { useDispatch, useSelector } from "react-redux";
 import { countriesLoad } from "../redux/countriesLoad";
 import { LoadingStatus } from "./LoadingStatus";
 import { favCountriesLoad } from "../redux/favCountriesLoad";
+import { Countries } from "../components/Countries";
 
 export const PageFavorites = () => {
 
+  const dispatch = useDispatch();
   const countries = useSelector(state => state.countries)
-  const favCountries = useSelector(state => state.favCountries);
+  const favCountries = useSelector(state => state.favCountries.data);
+  console.log('favCountries', favCountries);
 
+  useEffect(
+    () => {
+      if (countries.dataLoadState !== 2) {
+        dispatch(countriesLoad);
+        dispatch(favCountriesLoad);
+      }
+    },
+    []
+  );
 
   return (
     <div className='CountryList'>
       <div className='content'>
-        <FavCountries
-          countries={countries.data}
-          favCountries={favCountries.data}
-        />
+        {(countries.dataLoadState === 2) &&
+          <FavCountries countries={countries.data} favCountries={favCountries}/>
+        }
       </div>
     </div>
   );
-
 }

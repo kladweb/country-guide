@@ -14,21 +14,26 @@ export const PageCountries = () => {
   const params = useParams();
   const page = params.part;
   const dispatch = useDispatch();
-  const country = useSelector(state => state.countries);
+  const countries = useSelector(state => state.countries);
+  const favCountries = useSelector(state => state.favCountries.data);
+  console.log('favCountries.data', favCountries);
 
   useEffect(
     () => {
-      if (country.dataLoadState !== 2) {
+      if (countries.dataLoadState !== 2) {
         dispatch(countriesLoad);
         dispatch(favCountriesLoad);
       }
+      // return () => {
+      //   window.localStorage.setItem('favCountries', JSON.stringify(favCountries));
+      // }
     },
     []
   );
 
   useEffect(() => {
-      if (country.dataLoadState === 2) {
-        dispatch(updateCurrentData({page: page, data: country.data}));
+      if (countries.dataLoadState === 2) {
+        dispatch(updateCurrentData({page: page, data: countries.data}));
       }
     },
     [page]
@@ -37,17 +42,17 @@ export const PageCountries = () => {
   return (
     <div className='CountryList'>
       <div className='content'>
-        {(country.dataLoadState === 0) &&
+        {(countries.dataLoadState === 0) &&
           <LoadingStatus loadStatus='no data'/>
         }
-        {(country.dataLoadState === 1) &&
+        {(countries.dataLoadState === 1) &&
           <LoadingStatus loadStatus='loading...'/>
         }
-        {(country.dataLoadState === 2) &&
-          <Countries countries={country.currentData} page={page}/>
+        {(countries.dataLoadState === 2) &&
+          <Countries countries={countries.currentData} page={page}/>
         }
-        {(country.dataLoadState === 3) &&
-          <LoadingStatus loadStatus={'error ' + country.dataLoadError}/>
+        {(countries.dataLoadState === 3) &&
+          <LoadingStatus loadStatus={'error ' + countries.dataLoadError}/>
         }
       </div>
     </div>
