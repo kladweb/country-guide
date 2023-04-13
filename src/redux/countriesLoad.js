@@ -1,4 +1,4 @@
-import { updateLoadState, updateData } from './countriesSlice.js';
+import { updateLoadState, updateData, updateCurrentData } from './countriesSlice.js';
 
 export async function countriesLoad(dispatch) {
 
@@ -10,6 +10,7 @@ export async function countriesLoad(dispatch) {
       const data = await response.json();
       dispatch(updateLoadState({state: 2, error: null}));
       dispatch(updateData(data));
+      dispatch(updateCurrentData({page: 'all', data: data}));
     } else {
       dispatch(updateLoadState({state: 3, error: 'HTTP error ' + response.status}));
     }

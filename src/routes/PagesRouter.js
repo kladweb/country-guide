@@ -12,11 +12,11 @@ export const PagesRouter = () => {
   return (
     <Routes>
       <Route path="/" element={<PageMain/>}/>
-      <Route path="/countries" element={<PageCountries/>}>
-        <Route path=":clid" element={<PageCountry/>}/>
+      <Route path="/countries/:part" element={<PageCountries/>}>
+        <Route path=":countid" element={<PageCountry/>}/>
       </Route>
       <Route path="/favorites" element={<PageFavorites/>}>
-        <Route path=":clid" element={<PageCountry/>}/>
+        <Route path=":countid" element={<PageCountry/>}/>
       </Route>
       <Route path="/about" element={<PageAbout/>}/>
     </Routes>

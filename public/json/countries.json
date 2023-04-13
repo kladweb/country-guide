@@ -64,5 +64,101 @@
     "name": "Azerbaijan",
     "population": 10067108,
     "area": 86600
+  },
+  {
+    "code": "bs",
+    "name": "Bahamas",
+    "population": 385340,
+    "area": 13943
+  },
+  {
+    "code": "bh",
+    "name": "Bahrain",
+    "population": 1543300,
+    "area": 778
+  },
+  {
+    "code": "bd",
+    "name": "Bangladesh",
+    "population": 168163758,
+    "area": 147570
+  },
+  {
+    "code": "bb",
+    "name": "Barbados",
+    "population": 287025,
+    "area": 430
+  },
+  {
+    "code": "be",
+    "name": "Belgium",
+    "population": 11522169,
+    "area": 30528
+  },
+  {
+    "code": "bz",
+    "name": "Belize",
+    "population": 408487,
+    "area": 22966
+  },
+  {
+    "code": "bj",
+    "name": "Benin",
+    "population": 11733059,
+    "area": 114763
+  },
+  {
+    "code": "bt",
+    "name": "Bhutan",
+    "population": 741672,
+    "area": 38394
+  },
+  {
+    "code": "bo",
+    "name": "Bolivia",
+    "population": 11469896,
+    "area": 1098580
+  },
+  {
+    "code": "ba",
+    "name": "Bosnia and Herzegovina",
+    "population": 3301000,
+    "area": 51209
+  },
+  {
+    "code": "bw",
+    "name": "Botswana",
+    "population": 2338851,
+    "area": 581730
+  },
+  {
+    "code": "br",
+    "name": "Brazil",
+    "population": 211173432,
+    "area": 8515770
+  },
+  {
+    "code": "bn",
+    "name": "Brunei",
+    "population": 442400,
+    "area": 5765
+  },
+  {
+    "code": "bg",
+    "name": "Bulgaria",
+    "population": 7000039,
+    "area": 111002
+  },
+  {
+    "code": "bf",
+    "name": "Burkina Faso",
+    "population": 20870060,
+    "area": 274222
+  },
+  {
+    "code": "bi",
+    "name": "Burundi",
+    "population": 10953317,
+    "area": 27834
   }
 ]

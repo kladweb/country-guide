@@ -12,11 +12,11 @@ export const PageCountry = () => {
 
   const params = useParams();
   // console.log(params);
-  // since the route looks like that: <Route path="/client/:clid" element={<Page_Client/>} />
-  // it means useParams hook returns what's in the URI after "/client/" as "clid" property (it's string)
+  // since the route looks like that: <Route path="/client/:countid" element={<Page_Client/>} />
+  // it means useParams hook returns what's in the URI after "/client/" as "countid" property (it's string)
 
-  const countryId = params.clid;
-  // const countryId = parseInt(params.clid);
+  const countryId = params.countid;
+  // const countryId = parseInt(params.countid);
 
   const countryData = appData.find(c => c.code === countryId);
 

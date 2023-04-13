@@ -17,12 +17,14 @@ export const Country = ({code, name, page}) => {
     }
     dispatch(updateFavData(newData));
   };
+  const isFav = data.includes(code);
 
   // console.log(data);
+  // console.log('render');
 
   return (
     <div className='Country'>
-      <div className='flag-frame'>
+      <div className={`flag-frame${isFav ? ' isFav' : ''}`}>
         <img className='flag-preview' src={`/img/flags/${code}.png`} alt={name}/>
         <span className='country-title'>{name}</span>
         <div className='CountryLinks'>
@@ -45,8 +47,8 @@ export const Country = ({code, name, page}) => {
                 14.5517 11.7578 14.5689 11.8657 14.5501C12.1375 14.5032 12.3203 14.2454 12.2735 13.9735L11.5953
                 10.022L14.4657 7.22354C14.5438 7.14698 14.5953 7.04698 14.611 6.9376C14.6532 6.66417 14.4625
                 6.41104 14.1891 6.37042Z"
-                  fill={data.includes(code) ? 'yellow' : 'none'}
-                  stroke={data.includes(code) ? 'yellow' : '#FFF'}
+                  fill={isFav ? 'yellow' : 'none'}
+                  stroke={isFav ? 'yellow' : '#FFF'}
                   className="icon-star-path"></path>
               </svg>
             </div>
