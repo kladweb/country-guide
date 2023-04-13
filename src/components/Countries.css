@@ -8,6 +8,7 @@
 .CountryList {
   /*margin: 0 auto;*/
   /*text-align: center;*/
+  min-height: calc(100vh - 4.75rem);
   background-image: linear-gradient(rgba(144, 91, 75, 0.75), rgba(144, 91, 75, 0.75)), url(../../public/img/background/background_01.jpg);
   background-repeat: no-repeat;
   background-position: center center;
@@ -47,7 +48,7 @@
 
 .navPages {
   margin: 0 auto;
-  padding-top: 2rem;
+  padding-top: 3rem;
   text-align: center;
   font-size: 1.5rem;
   color: #eaeaea;

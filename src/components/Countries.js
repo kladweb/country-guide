@@ -1,5 +1,5 @@
-import React from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import { useSelector } from "react-redux";
 
 import { Country } from './Country';
@@ -7,14 +7,12 @@ import { Country } from './Country';
 import './Countries.css';
 
 export const Countries = ({countries, page}) => {
-
-  const countriesCode = countries.map(client =>
-    <Country
-      key={client.code}
-      code={client.code}
-      name={client.name}
-      page={`/countries/${page}/`}
-    />
+  let navigate = useNavigate();
+  useEffect(
+    () => {
+      navigate('/countries/all');
+    },
+    []
   );
 
   let countPages = useSelector(state => state.countries.countPages);
@@ -37,6 +35,15 @@ export const Countries = ({countries, page}) => {
     return className;
   }
 
+  // const countriesCode = countries.map(client =>
+  //   <Country
+  //     key={client.code}
+  //     code={client.code}
+  //     name={client.name}
+  //     page={`/countries/${page}/`}
+  //   />
+  // );
+
   return (
     <>
       <div className='navPages'>
@@ -46,10 +53,11 @@ export const Countries = ({countries, page}) => {
         </NavLink>
         {navPagesCode()}
       </div>
-      <div className='CountriesGroup'>
-        {countriesCode}
-        <Outlet/>
-      </div>
+      <Outlet/>
+      {/*<div className='CountriesGroup'>*/}
+      {/*  {countriesCode}*/}
+      {/*  <Outlet/>*/}
+      {/*</div>*/}
     </>
   );
 }
