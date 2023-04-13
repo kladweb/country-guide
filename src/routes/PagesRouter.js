@@ -8,16 +8,18 @@ import { PageCountry } from '../pages/PageCountry';
 import { PageFavorites } from '../pages/PageFavorites';
 
 export const PagesRouter = () => {
-          
-    return (
-      <Routes>
-        <Route path="/" element={<PageMain/>}/>
-        <Route path="/countries" element={<PageCountries/>}>
-          <Route path=":clid" element={<PageCountry/>}/>
-        </Route>
-        <Route path="/favorites" element={<PageFavorites/>} />
-        <Route path="/about" element={<PageAbout/>} />
-      </Routes>
-    );
-    
+
+  return (
+    <Routes>
+      <Route path="/" element={<PageMain/>}/>
+      <Route path="/countries" element={<PageCountries/>}>
+        <Route path=":clid" element={<PageCountry/>}/>
+      </Route>
+      <Route path="/favorites" element={<PageFavorites/>}>
+        <Route path=":clid" element={<PageCountry/>}/>
+      </Route>
+      <Route path="/about" element={<PageAbout/>}/>
+    </Routes>
+  );
+
 };

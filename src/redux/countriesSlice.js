@@ -7,7 +7,7 @@ const initialState={
 }
 
 export const countriesSlice = createSlice({
-  name: 'country',
+  name: 'countries',
   initialState,
   reducers: {
     updateLoadState: (state,action) => {

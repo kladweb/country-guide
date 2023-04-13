@@ -8,7 +8,7 @@ export const CountryAbout = () => {
     <>
       <h1>ABOUT THE PROJECT</h1>
       <p>
-        This site was created as the final project of the course "Ready for web application development" at the
+        This site was created as the final project of the course "React for web application development" at the
         IT-ACADEMY educational center using functional components. This project was developed by Pavel Kladkevich under
         the guidance of the teacher Alexey Loktev.
       </p>

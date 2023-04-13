@@ -8,7 +8,7 @@ import { CountryInfo } from '../components/CountryInfo';
 
 export const PageCountry = () => {
 
-  const appData = useSelector(state => state.country.data);
+  const appData = useSelector(state => state.countries.data);
 
   const params = useParams();
   // console.log(params);
