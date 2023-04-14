@@ -5,8 +5,7 @@ import { Countries } from '../components/Countries';
 import { useDispatch, useSelector } from "react-redux";
 import { countriesLoad } from "../redux/countriesLoad";
 import { LoadingStatus } from "./LoadingStatus";
-import { Outlet, useParams } from "react-router-dom";
-import { favCountriesLoad } from "../redux/favCountriesLoad";
+import { useParams } from "react-router-dom";
 import { updateCurrentData } from "../redux/countriesSlice";
 
 export const PageCountries = () => {
@@ -15,13 +14,11 @@ export const PageCountries = () => {
   const page = params.part;
   const dispatch = useDispatch();
   const countries = useSelector(state => state.countries);
-  const favCountries = useSelector(state => state.favCountries.data);
 
   useEffect(
     () => {
       if (countries.dataLoadState !== 2) {
         dispatch(countriesLoad);
-        dispatch(favCountriesLoad);
       }
     },
     []

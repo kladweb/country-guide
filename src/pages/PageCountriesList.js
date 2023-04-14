@@ -1,6 +1,6 @@
 import React from 'react';
 import { Outlet, useParams } from "react-router-dom";
-import { Country } from "../components/Country";
+import Country from "../components/Country";
 import { useSelector } from "react-redux";
 
 export const PageCountriesList = () => {
@@ -9,11 +9,11 @@ export const PageCountriesList = () => {
   const params = useParams();
   const page = params.part;
 
-  const countriesCode = countries.map(client =>
+  const countriesCode = countries.map(country =>
     <Country
-      key={client.code}
-      code={client.code}
-      name={client.name}
+      key={country.code}
+      code={country.code}
+      name={country.name}
       page={`/countries/${page}/`}
     />
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Country } from './Country';
+import Country from './Country';
 
 import './Countries.css';
 import { Outlet } from "react-router-dom";

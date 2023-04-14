@@ -1,16 +1,31 @@
-import React from 'react';
-import { NavLink, useParams } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 
 import './PagesLinks.css';
+import { useDispatch, useSelector } from "react-redux";
+import { favCountriesLoad } from "../redux/favCountriesLoad";
 
 export const PagesLinks = () => {
-  // const params = useParams();
+  const dispatch = useDispatch();
+  const countries = useSelector(state => state.countries);
+  const favCountries = useSelector(state => state.favCountries.data);
 
+  useEffect(
+    () => {
+      if (countries.dataLoadState !== 2) {
+        dispatch(favCountriesLoad);
+      }
+    },
+    []
+  );
+
+  function getCountFav() {
+    if (favCountries) {
+      return favCountries.length
+    }
+  }
   function getLinkClass(obj) {
-    // const page = params.part;
-    // console.log('page', page);
     let className = "PageLink";
-    // console.log('page', page);
     if (obj.isActive)
       className += " ActivePageLink";
     return className;
@@ -20,8 +35,13 @@ export const PagesLinks = () => {
     <div>
       <NavLink to="/" className={getLinkClass}>Main</NavLink>
       <NavLink to="/countries" className={getLinkClass}>Countries</NavLink>
-      <NavLink to="/favorites" className={getLinkClass}>Favorites</NavLink>
-      <NavLink to="/about" className={getLinkClass}>About us</NavLink>
+      <NavLink to="/favorites" className={getLinkClass}>
+        Favorites
+        {(getCountFav() > 0) &&
+          <span className='countFav'>{getCountFav()}</span>
+        }
+      </NavLink>
+      <NavLink to="/about" className={getLinkClass}>About us</NavLink>
     </div>
   );
 

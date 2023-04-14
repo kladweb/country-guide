@@ -2,13 +2,15 @@ import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from 'react-router-dom';
 
-import './Country.css';
 import { updateFavData } from "../redux/favCountriesSlice";
+import './Country.css';
 
-export const Country = ({code, name, page}) => {
+const Country = ({code, name, page}) => {
   const dispatch = useDispatch();
   const dataFav = useSelector(state => state.favCountries.data);
-  const toggleFav = (code) => {
+  const isFav = dataFav.includes(code);
+
+  function toggleFav(code) {
     let newData = [...dataFav];
     if (newData.includes(code)) {
       newData = dataFav.filter(item => (item !== code));
@@ -16,12 +18,7 @@ export const Country = ({code, name, page}) => {
       newData.push(code);
     }
     dispatch(updateFavData(newData));
-  };
-  // console.log(dataFav)
-  const isFav = dataFav.includes(code);
-
-  // console.log(data);
-  // console.log('render');
+  }
 
   return (
     <div className='Country'>
@@ -58,4 +55,6 @@ export const Country = ({code, name, page}) => {
       </div>
     </div>
   );
-}
+};
+
+export default React.memo(Country);

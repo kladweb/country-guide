@@ -1,12 +1,9 @@
 import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from "react-redux";
 
 import { FavCountries } from '../components/FavCountries';
-
-import { useDispatch, useSelector } from "react-redux";
 import { countriesLoad } from "../redux/countriesLoad";
-import { LoadingStatus } from "./LoadingStatus";
 import { favCountriesLoad } from "../redux/favCountriesLoad";
-import { Countries } from "../components/Countries";
 
 export const PageFavorites = () => {
 

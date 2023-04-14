@@ -2,14 +2,14 @@ import React, { useEffect } from 'react';
 import { NavLink, Outlet, useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from "react-redux";
 
-import { Country } from './Country';
-
 import './Countries.css';
 
 export const Countries = ({countries, page}) => {
   const params = useParams();
   const part = params.part;
+  let countPages = useSelector(state => state.countries.countPages);
   let navigate = useNavigate();
+
   useEffect(
     () => {
       if (!part) {
@@ -19,7 +19,6 @@ export const Countries = ({countries, page}) => {
     []
   );
 
-  let countPages = useSelector(state => state.countries.countPages);
   const navPagesCode = () => {
     let navPages = [];
     for (let i = 1; i <= countPages; i++) {

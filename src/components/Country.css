@@ -1,21 +1,12 @@
 .Country {
-  padding: 2px 0;
-}
-
-.flag-preview {
-  width: 10rem;
-}
-
-.Country {
-  /*width: 20rem;*/
   display: inline-block;
-  margin: 1.5rem;
+  margin: 0.5rem 1.5rem;
+  padding: 1rem 0;
   text-align: center;
 }
 
 .country-title {
   display: block;
-  /*padding-bottom: 0.5rem;*/
   font-size: 1.25rem;
   color: #FFF;
 }
@@ -51,7 +42,6 @@
   display: inline-block;
   float: right;
   right: 0;
-  /*transform-origin: right top;*/
   transform: scale(1.2, 1.2);
 }
 
@@ -59,7 +49,6 @@
   display: block;
   margin: 0 auto;
   width: 14rem;
-  /*height: 9rem;*/
   background-color: rgba(234, 234, 234, 0.3);
   border: solid 1px #eaeaea;
   border-radius: 10px;
@@ -72,9 +61,44 @@
   width: auto;
   height: 6rem;
   object-fit: contain;
+  transition: transform 0.3s ease-in-out;
+}
+
+.flag-preview:hover {
+  transform: scale(1.07);
+  transition: transform 0.5s ease-out;
 }
 
 .isFav {
   border-color: yellow;
   transition: 0.5s;
+}
+
+@media (max-width: 1080px) {
+  .Country {
+    margin: 0.75rem;
+    padding: 0;
+  }
+  .flag-frame {
+    width: 12rem;
+  }
+  .flag-preview {
+    height: 5.5rem;
+  }
+
+  .CountryInfo__title,
+  .CountryAdd {
+    margin: 0.5rem 0;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+  }
+  .icon {
+    position: relative;
+    margin-bottom: -0.75rem;
+    padding-left: 0.5rem;
+    float: right;
+    top: -0.1rem;
+    right: 0;
+    transform: scale(1, 1);
+  }
 }

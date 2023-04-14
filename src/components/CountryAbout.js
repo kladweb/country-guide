@@ -16,7 +16,9 @@ export const CountryAbout = () => {
         My project of the previous module "Development of Web Applications in JavaScript" with using canvas
         graphics:
         <span> </span>
-        <a className='js-project' href="https://guess-countries.netlify.app/" target="_blank">GUESS THE COUNTRY</a>
+        <a className='js-project' href="https://guess-countries.netlify.app/" target="_blank">
+          GUESS&nbsp;THE&nbsp;COUNTRY
+        </a>
       </p>
     </>
   );
