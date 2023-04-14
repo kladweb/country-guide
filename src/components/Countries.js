@@ -44,7 +44,7 @@ export const Countries = ({countries, page}) => {
   return (
     <>
       <div className='navPages'>
-        <span className='navPages-items'>PAGES: </span>
+        <span className='navPages-items navPages-name'>PAGES: </span>
         <NavLink to={`/countries/all`} className={getLinkClass} key={countPages + 1}>
           <span className='navPages-items'>ALL</span>
         </NavLink>
