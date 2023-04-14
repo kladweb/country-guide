@@ -10,6 +10,9 @@ export const Countries = ({countries, page}) => {
   let countPages = useSelector(state => state.countries.countPages);
   let navigate = useNavigate();
 
+  //в данном проекте страницы /countries/ не существует, поэтому сразу переходим на страницу /countries/all. Можно
+  // было бы вместо /countries/all сделать просто /countries/, но в этом случае кнопка меню 'Countries' перестает
+  // быть активной при переходе внутри этой страницы на любую другую под-страницу.
   useEffect(
     () => {
       if (!part) {

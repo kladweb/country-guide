@@ -12,12 +12,16 @@ export const PageCountry = () => {
   const countryData = appData.find(c => c.code === countryId);
 
   return (
-    <CountryInfo
-      code={countryData.code}
-      name={countryData.name}
-      population={countryData.population}
-      area={countryData.area}
-    />
-  );
-
+    <>
+      {
+        (countryData) &&
+        <CountryInfo
+          code={countryData.code}
+          name={countryData.name}
+          population={countryData.population}
+          area={countryData.area}
+        />
+      }
+    </>
+  )
 }

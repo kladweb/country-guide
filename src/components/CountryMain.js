@@ -1,7 +1,7 @@
 import React from 'react';
+import { NavLink } from "react-router-dom";
 
 import './CountryMain.css';
-import { NavLink } from "react-router-dom";
 
 export const CountryMain = () => {
 
@@ -14,7 +14,7 @@ export const CountryMain = () => {
         the countries (e.g., total area, population).
       </p>
       <NavLink to={'/countries/all'} className='main-button'>
-          <span className='main-button__name'>LIST OF COUNTRIES</span>
+        <span className='main-button__name'>LIST OF COUNTRIES</span>
       </NavLink>
     </>
   );

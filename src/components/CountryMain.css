@@ -1,6 +1,7 @@
 .CountryMain {
+  padding-bottom: 2rem;
   position: relative;
-  min-height: calc(100vh - 4.75rem);
+  min-height: calc(100vh - 6.8rem);
   background-image: linear-gradient(rgba(147, 153, 153, 0.5), rgba(147, 153, 153, 0.5)), url(../../public/img/background/background_02.jpg);
   background-repeat: no-repeat;
   background-position: center center;

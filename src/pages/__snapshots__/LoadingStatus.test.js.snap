@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`работа LoadingStatus 1`] = `
+<div
+  className="loading"
+>
+  <span
+    className="loading-status"
+  />
+</div>
+`;

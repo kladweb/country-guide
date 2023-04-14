@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from 'react';
-
-import { Countries } from '../components/Countries';
-
-import { useDispatch, useSelector } from "react-redux";
-import { countriesLoad } from "../redux/countriesLoad";
-import { LoadingStatus } from "./LoadingStatus";
+import React, { useEffect } from 'react';
 import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+
 import { updateCurrentData } from "../redux/countriesSlice";
+import { countriesLoad } from "../redux/countriesLoad";
+import { Countries } from '../components/Countries';
+import { LoadingStatus } from "./LoadingStatus";
 
 export const PageCountries = () => {
 

@@ -4,6 +4,8 @@ export async function countriesLoad(dispatch) {
 
   try {
     dispatch(updateLoadState({state: 1, error: null}));
+    //так как mockapi позволяет хранить в одном каталоге массив максимальной длины 100, а стран в проекте больше,
+    // чем 100, поэтому массив разбит на два, а затем соединяем все в один.
     const response = await fetch('https://642dd59966a20ec9cea70c6c.mockapi.io/countries');
     const response2 = await fetch('https://642dd59966a20ec9cea70c6c.mockapi.io/countries2');
     if (response.ok && response2.ok) {
