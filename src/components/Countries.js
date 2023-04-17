@@ -19,7 +19,7 @@ export const Countries = ({countries, page}) => {
         navigate('/countries/all');
       }
     },
-    []
+    [part, navigate]
   );
 
   const navPagesCode = () => {

@@ -13,9 +13,9 @@ export const App = () => (
     <BrowserRouter>
       <header className='main-header'>
         <div className='content'>
-          <a className='main-header__brand'>
+          <div className='main-header__brand'>
             <img className='main-header__logo' src='/img/shared/logo.png' alt="COUNTRY GUIDE"/>
-          </a>
+          </div>
           <span className='main-header__name'>COUNTRY GUIDE</span>
           <nav className='main-nav'>
             <PagesLinks/>
