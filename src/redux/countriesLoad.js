@@ -1,9 +1,11 @@
 import { updateLoadState, updateData, updateCurrentData } from './countriesSlice.js';
+import { useParams } from "react-router-dom";
 
 export async function countriesLoad(dispatch) {
 
   try {
     dispatch(updateLoadState({state: 1, error: null}));
+
     //так как mockapi позволяет хранить в одном каталоге массив максимальной длины 100, а стран в проекте больше,
     // чем 100, поэтому массив разбит на два, а затем соединяем все в один.
     const response = await fetch('https://642dd59966a20ec9cea70c6c.mockapi.io/countries');
@@ -14,7 +16,7 @@ export async function countriesLoad(dispatch) {
       const data = [...data1, ...data2];
       dispatch(updateLoadState({state: 2, error: null}));
       dispatch(updateData(data));
-      dispatch(updateCurrentData({page: 'all', data: data}));
+      dispatch(updateCurrentData({data: data}));
     } else {
       dispatch(updateLoadState({state: 3, error: 'HTTP error ' + response.status}));
       dispatch(updateLoadState({state: 3, error: 'HTTP error ' + response2.status}));
