@@ -10,6 +10,8 @@ export const PageCountriesList = () => {
   const params = useParams();
   const page = params.part;
 
+  console.log('page',page);
+
   const countriesCode = countries.map(country =>
     <Country
       key={country.code}

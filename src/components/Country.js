@@ -11,7 +11,7 @@ const Country = ({code, name, page}) => {
   const dataFav = useSelector(state => state.favCountries.data);
   const isFav = dataFav.includes(code);
 
-  function toggleFav(code) {
+  const toggleFav = function (code) {
     let newData = [...dataFav];
     if (newData.includes(code)) {
       newData = dataFav.filter(item => (item !== code));
