@@ -5,6 +5,7 @@
 
 .content {
   max-width: 90rem;
+  /*min-width: 320px;*/
   margin: 0 auto;
   padding-left: 1rem;
   padding-right: 1rem;

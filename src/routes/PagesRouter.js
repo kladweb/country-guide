@@ -15,11 +15,11 @@ export const PagesRouter = () => {
       <Route path="/" element={<PageMain/>}/>
       <Route path="/countries" element={<PageCountries/>}>
         <Route path=":part" element={<PageCountriesList/>}>
-          <Route path=":countid" element={<PageCountry/>}/>
+          <Route path=":countid" element={<PageCountry pageCount={'countries'}/>}/>
         </Route>
       </Route>
       <Route path="/favorites" element={<PageFavorites/>}>
-        <Route path=":countid" element={<PageCountry/>}/>
+        <Route path=":countid" element={<PageCountry pageCount={'favorites'}/>}/>
       </Route>
       <Route path="/about" element={<PageAbout/>}/>
     </Routes>

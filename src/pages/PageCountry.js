@@ -4,8 +4,7 @@ import { useSelector } from 'react-redux';
 
 import { CountryInfo } from '../components/CountryInfo';
 
-export const PageCountry = () => {
-
+export const PageCountry = ({pageCount}) => {
   const appData = useSelector(state => state.countries.data);
   const params = useParams();
   const countryId = params.countid;
@@ -20,6 +19,7 @@ export const PageCountry = () => {
           name={countryData.name}
           population={countryData.population}
           area={countryData.area}
+          pageCount={pageCount}
         />
       }
     </>

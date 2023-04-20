@@ -1,5 +1,4 @@
 import { updateLoadState, updateData, updateCurrentData } from './countriesSlice.js';
-import { useParams } from "react-router-dom";
 
 export async function countriesLoad(dispatch) {
 

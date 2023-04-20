@@ -36,6 +36,18 @@
   transition: .7s;
 }
 
+.CountryInfo__title:active,
+.CountryAdd:active {
+  box-shadow: 0 0 2px #474848 inset;
+}
+
+.CountryLinks .active .CountryInfo__title {
+  background: rgba(234, 234, 234, 0.8);
+  color: #7a4d40;
+  box-shadow: 0 0 2px #474848 inset;
+
+}
+
 .icon {
   margin-bottom: -1rem;
   padding-left: 0.5rem;
