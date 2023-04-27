@@ -17,7 +17,7 @@ export const PageCountries = () => {
   useEffect(
     () => {
       if (countries.dataLoadState !== 2) {
-        dispatch(countriesLoad,);
+        dispatch(countriesLoad);
       }
     },
     []

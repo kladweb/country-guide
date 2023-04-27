@@ -22,7 +22,6 @@ export const countriesSlice = createSlice({
       state.countPages = Math.ceil(state.data.length / 10);
     },
     updateCurrentData: (state, action) => {
-      console.log('action.payload', action.payload);
       if (action.payload.page !== 'all') {
         state.currentData = action.payload.data.slice((action.payload.page - 1) * 10, action.payload.page * 10);
       } else {
