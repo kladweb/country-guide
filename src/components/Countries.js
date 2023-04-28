@@ -57,7 +57,7 @@ export const Countries = ({countries, page}) => {
       <div className='typeSorting'>
         <span className='typeSorting-name'>Sort by:</span>
         <select onChange={sortCountries}>
-          <option value="name">name (default)</option>
+          <option value="name">country name (default)</option>
           <option value="population">population (ascending)</option>
           <option value="population-des">population (descending)</option>
           <option value="area">total area (ascending)</option>

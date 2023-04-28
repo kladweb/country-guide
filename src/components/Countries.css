@@ -13,7 +13,7 @@
 
 .CountriesGroup {
   width: auto;
-  padding: 2rem 0 10rem 0;
+  padding: 2rem 0 7rem 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -118,12 +118,18 @@
 
 @media (max-width: 1080px) {
   .CountriesGroup {
-    padding: 1rem 0;
+    padding: 2rem 0 4rem 0;
   }
 
   .navPages {
     padding-top: 2rem;
     font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 775px) {
+  .CountriesGroup {
+    padding: 2rem 0 7rem 0;
   }
 }
 
@@ -137,5 +143,11 @@
     min-width: .75rem;
     margin: 0.5rem 0.5rem;
     border-radius: 7px;
+  }
+}
+
+@media (max-width: 360px) and (orientation: portrait) {
+  .CountriesGroup {
+    padding: 2rem 0 8rem 0;
   }
 }
