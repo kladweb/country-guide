@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import './Countries.css';
 import { updateData } from "../redux/countriesSlice";
 import { sortingCountries } from "./sortingCountries";
+import { ScrollUp } from "./ScrollUp";
 
 export const Countries = ({countries, page}) => {
   const params = useParams();
@@ -47,13 +48,15 @@ export const Countries = ({countries, page}) => {
 
   function getLinkClass(obj) {
     let className = "navPages-links";
-    if (obj.isActive)
+    if (obj.isActive) {
       className += " active";
+    }
     return className;
   }
 
   return (
     <>
+      <ScrollUp/>
       <div className='typeSorting'>
         <span className='typeSorting-name'>Sort by:</span>
         <select onChange={sortCountries}>
