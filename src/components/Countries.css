@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .CountryList {
   min-height: calc(100vh - 4.75rem);
   background-image: linear-gradient(rgba(144, 91, 75, 0.75), rgba(144, 91, 75, 0.75)), url(../../public/img/background/background_01.jpg);
@@ -109,10 +113,9 @@
 .typeSorting select:active,
 .typeSorting option:active,
 .typeSorting select:target,
-.typeSorting option:target
-{
-  border:none;
-  outline:none;
+.typeSorting option:target {
+  border: none;
+  outline: none;
   background: none;
 }
 

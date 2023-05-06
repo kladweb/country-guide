@@ -5,12 +5,10 @@ import Country from './Country';
 
 import './Countries.css';
 import { sortingCountries } from "./sortingCountries";
-import { useDispatch } from "react-redux";
-import { updateFavData } from "../redux/favCountriesSlice";
+import { ScrollUp } from "./ScrollUp";
 
 export const FavCountries = ({countries, favCountries}) => {
 
-  const dispatch = useDispatch();
   let favCountriesObj = countries.filter(item => favCountries.includes(item.code));
   const [typeSort, changeTypeSort] = useState('name');
 
@@ -31,6 +29,7 @@ export const FavCountries = ({countries, favCountries}) => {
 
   return (
     <>
+      <ScrollUp/>
       <div className='typeSorting'>
         <span className='typeSorting-name'>Sort by:</span>
         <select onChange={sortFavCountries}>

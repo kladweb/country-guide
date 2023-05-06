@@ -1,10 +1,27 @@
 import React, { useEffect, useState } from "react";
+import styled, { css } from 'styled-components'
 
-import './ScrollUp.css';
+const ScrollDiv = styled.div`
+  position: fixed;
+  display: block;
+  bottom: 8rem;
+  right: 1rem;
+  font-family: "Material Icons", fantasy;
+  font-size: 3rem;
+  color: rgba(234, 234, 234, 0.7);
+  background-color: #939999;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: transform 0.5s ease-in-out, opacity 0.2s ease-in-out;
+  ${({toShow}) => css`
+    transform: translateX(${toShow ? '0' : '300%'})`};
+`;
 
 export const ScrollUp = () => {
-  const coords = window.innerHeight * 2;
+  const coords = window.innerHeight;
   const [show, changeShow] = useState(false);
+
 
   useEffect(
     () => {
@@ -18,22 +35,12 @@ export const ScrollUp = () => {
 
   function checkScroll() {
     let scrolled = window.scrollY;
-    if (!show && coords < scrolled) {
+    if (coords < scrolled && !show) {
       changeShow(true);
     }
-    if (show && coords > scrolled) {
+    if (coords > scrolled && show) {
       changeShow(false);
     }
-  }
-
-  function getScrollClass() {
-    let className;
-    if (show) {
-      className = "scroll-up show";
-    } else {
-      className = "scroll-up";
-    }
-    return className;
   }
 
   function scrollPage() {
@@ -42,8 +49,9 @@ export const ScrollUp = () => {
   }
 
   return (
-    <div className={getScrollClass()} onClick={scrollPage}>
+
+    <ScrollDiv onClick={scrollPage} toShow={show}>
       <span className="material-icons-outlined">expand_less</span>
-    </div>
+    </ScrollDiv>
   );
 }
