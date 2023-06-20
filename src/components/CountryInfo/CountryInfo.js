@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
+import { useNavigate, useParams } from "react-router-dom";
 
 import './CountryInfo.css';
-import { useNavigate, useParams } from "react-router-dom";
 
 export const CountryInfo = ({code, name, population, area, pageCount}) => {
   const params = useParams();

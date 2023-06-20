@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { updateCurrentData } from '../redux/countriesSlice';
 import { countriesLoad } from '../redux/countriesLoad';
-import { Countries } from '../components/Countries';
-import { LoadingStatus } from './LoadingStatus';
+import { Countries } from '../components/Countries/Countries';
+import { LoadingStatus } from '../components/LoadingStatus/LoadingStatus';
 
 export const PageCountries = () => {
 

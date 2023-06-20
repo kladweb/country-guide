@@ -5,7 +5,7 @@ import { PageAbout } from '../pages/PageAbout';
 import { PageMain } from '../pages/PageMain';
 import { PageCountries } from '../pages/PageCountries';
 import { PageCountriesList } from '../pages/PageCountriesList';
-import { PageCountry } from '../pages/PageCountry';
+import { CountryInfoBar } from '../pages/CountryInfoBar';
 import { PageFavorites } from '../pages/PageFavorites';
 
 export const PagesRouter = () => {
@@ -15,11 +15,11 @@ export const PagesRouter = () => {
       <Route path="/" element={<PageMain/>}/>
       <Route path="/countries" element={<PageCountries/>}>
         <Route path=":part" element={<PageCountriesList/>}>
-          <Route path=":countid" element={<PageCountry pageCount={'countries'}/>}/>
+          <Route path=":countid" element={<CountryInfoBar pageCount={'countries'}/>}/>
         </Route>
       </Route>
       <Route path="/favorites" element={<PageFavorites/>}>
-        <Route path=":countid" element={<PageCountry pageCount={'favorites'}/>}/>
+        <Route path=":countid" element={<CountryInfoBar pageCount={'favorites'}/>}/>
       </Route>
       <Route path="/about" element={<PageAbout/>}/>
     </Routes>

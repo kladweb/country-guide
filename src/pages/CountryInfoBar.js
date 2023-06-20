@@ -2,9 +2,9 @@ import React from 'react';
 import { useParams } from "react-router-dom";
 import { useSelector } from 'react-redux';
 
-import { CountryInfo } from '../components/CountryInfo';
+import { CountryInfo } from '../components/CountryInfo/CountryInfo';
 
-export const PageCountry = ({pageCount}) => {
+export const CountryInfoBar = ({pageCount}) => {
   const appData = useSelector(state => state.countries.data);
   const params = useParams();
   const countryId = params.countid;

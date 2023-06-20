@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from 'react-router-dom';
 
-import { updateFavData } from "../redux/favCountriesSlice";
+import { updateFavData } from "../../redux/favCountriesSlice";
 
 import './Country.css';
 

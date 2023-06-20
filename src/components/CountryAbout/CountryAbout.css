@@ -2,7 +2,7 @@
   position: relative;
   min-height: calc(100vh - 4.75rem);
   background-image: linear-gradient(rgba(122, 77, 64, 0.83),
-  rgba(122, 77, 64, 0.84)), url(../../public/img/background/background_03.jpg);
+  rgba(122, 77, 64, 0.84)), url(../../../public/img/background/background_03.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;

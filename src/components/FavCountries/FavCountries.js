@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Outlet } from "react-router-dom";
+import { Outlet } from 'react-router-dom';
 
-import Country from './Country';
+import Country from '../Country/Country';
 
-import './Countries.css';
-import { sortingCountries } from "./sortingCountries";
-import { ScrollUp } from "./ScrollUp";
+import '../Countries/Countries.css';
+import { sortingCountries } from "../../utilities/sortingCountries";
+import { ScrollUp } from "../ScrollUp/ScrollUp";
 
 export const FavCountries = ({countries, favCountries}) => {
 
@@ -41,8 +41,7 @@ export const FavCountries = ({countries, favCountries}) => {
         </select>
       </div>
       <div className='CountriesGroup'>
-        {(favCountries.length === 0) &&
-          <p className='navPages'>The list of favorite countries is empty...</p>}
+        {(favCountries.length === 0) && <p className='navPages'>The list of favorite countries is empty...</p>}
         {countriesCode}
         <Outlet/>
       </div>

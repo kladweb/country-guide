@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { countriesLoad } from '../redux/countriesLoad';
 import { favCountriesLoad } from '../redux/favCountriesLoad';
-import { FavCountries } from '../components/FavCountries';
+import { FavCountries } from '../components/FavCountries/FavCountries';
 
 export const PageFavorites = () => {
 

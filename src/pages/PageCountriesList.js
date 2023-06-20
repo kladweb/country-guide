@@ -2,7 +2,7 @@ import React from 'react';
 import { Outlet, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-import Country from '../components/Country';
+import Country from '../components/Country/Country';
 
 export const PageCountriesList = () => {
   const country = useSelector(state => state.countries);

@@ -1,5 +1,5 @@
 import React from 'react';
-import { CountryAbout } from '../components/CountryAbout';
+import { CountryAbout } from '../components/CountryAbout/CountryAbout';
 
 export const PageAbout = () => {
 
