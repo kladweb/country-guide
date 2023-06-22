@@ -7,7 +7,7 @@ import { updateData } from "../../redux/countriesSlice";
 import { sortingCountries } from "../../utilities/sortingCountries";
 import { ScrollUp } from "../ScrollUp/ScrollUp";
 
-export const Countries = ({countries, page}) => {
+export const Countries = () => {
   const params = useParams();
   const dispatch = useDispatch();
   const part = params.part;
@@ -15,11 +15,9 @@ export const Countries = ({countries, page}) => {
   let dataCountries = useSelector(state => state.countries.data);
   let navigate = useNavigate();
 
-  // const [sortBy, changeSortBy] = useState('name');
-
-  //в данном проекте страницы /countries/ не существует, поэтому сразу переходим на страницу /countries/all. Можно
-  // было бы вместо /countries/all сделать просто /countries/, но в этом случае кнопка меню 'Countries' перестает
-  // быть активной при переходе внутри этой страницы на любую другую под-страницу.
+  //in this project, the "countries" page does not exist, so we immediately go to the "countries/all" page. It would be
+  //possible to make just "countries" instead of "countries/all", but in this case the "Countries" menu button
+  //ceases to be active when navigating inside this page to any other sub-page.
   useEffect(
     () => {
       if (!part) {
