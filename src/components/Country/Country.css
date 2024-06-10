@@ -29,6 +29,11 @@
   color: #FFF;
 }
 
+.country-title__small {
+  font-size: 1rem;
+  letter-spacing: -0.06em;
+}
+
 .CountryLinks {
   margin: 0.5rem 0;
   display: flex;
@@ -133,5 +138,8 @@
   }
   .country-title {
     font-size: 1.125rem;
+  }
+  .country-title__small {
+    font-size: 0.9rem;
   }
 }

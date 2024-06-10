@@ -43,8 +43,8 @@ const Country = ({code, name, page}) => {
       onExited={() => toggleFav(code)}>
       <div ref={nodeRef} className='Country'>
         <div className={`flag-frame${isFav && showStar ? ' isFav' : ''}`}>
-          <img className='flag-preview' src={`/img/flags/${code}.png`} alt={name}/>
-          <span className='country-title'>{name}</span>
+          <img className='flag-preview' src={`/img/flags/${code}.png`} alt={name} />
+          <span className={`country-title ${name.length > 24 ? 'country-title__small' : null}`}>{name}</span>
           <div className='CountryLinks'>
             <NavLink to={page + code} className='CountryInfo'>
               <button className='CountryInfo__title'>Information</button>
