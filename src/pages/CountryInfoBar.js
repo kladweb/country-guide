@@ -1,7 +1,6 @@
 import React from 'react';
 import { useParams } from "react-router-dom";
 import { useSelector } from 'react-redux';
-
 import { CountryInfo } from '../components/CountryInfo/CountryInfo';
 
 export const CountryInfoBar = ({pageCount}) => {

@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { NavLink, Outlet, useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
-
 import './Countries.css';
 import { updateData } from "../../redux/countriesSlice";
 import { sortingCountries } from "../../utilities/sortingCountries";

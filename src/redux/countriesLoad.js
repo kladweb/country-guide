@@ -24,5 +24,4 @@ export async function countriesLoad(dispatch) {
   } catch (err) {
     dispatch(updateLoadState({state: 3, error: err.message}));
   }
-
 }
