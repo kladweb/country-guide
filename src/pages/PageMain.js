@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { CountryMain } from '../components/CountryMain/CountryMain';
 
 export const PageMain = () => {

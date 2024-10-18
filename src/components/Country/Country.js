@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
-
 import { updateFavData } from "../../redux/favCountriesSlice";
-
 import './Country.css';
 
 const Country = ({code, name, page}) => {

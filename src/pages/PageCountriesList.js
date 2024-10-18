@@ -1,7 +1,6 @@
 import React from 'react';
 import { Outlet, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-
 import Country from '../components/Country/Country';
 
 export const PageCountriesList = () => {

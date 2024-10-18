@@ -49,7 +49,6 @@ export const ScrollUp = () => {
   }
 
   return (
-
     <ScrollDiv onClick={scrollPage} toShow={show}>
       <span className="material-icons-outlined">expand_less</span>
     </ScrollDiv>

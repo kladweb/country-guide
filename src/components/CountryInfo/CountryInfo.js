@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate, useParams } from "react-router-dom";
-
 import './CountryInfo.css';
 
 export const CountryInfo = ({code, name, population, area, pageCount}) => {

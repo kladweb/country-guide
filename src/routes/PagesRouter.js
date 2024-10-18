@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-
 import { PageAbout } from '../pages/PageAbout';
 import { PageMain } from '../pages/PageMain';
 import { PageCountries } from '../pages/PageCountries';
@@ -9,7 +8,6 @@ import { CountryInfoBar } from '../pages/CountryInfoBar';
 import { PageFavorites } from '../pages/PageFavorites';
 
 export const PagesRouter = () => {
-
   return (
     <Routes>
       <Route path="/" element={<PageMain/>}/>
@@ -24,5 +22,4 @@ export const PagesRouter = () => {
       <Route path="/about" element={<PageAbout/>}/>
     </Routes>
   );
-
 };

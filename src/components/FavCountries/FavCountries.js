@@ -1,17 +1,14 @@
 import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
-
 import Country from '../Country/Country';
-
-import '../Countries/Countries.css';
 import { sortingCountries } from "../../utilities/sortingCountries";
 import { ScrollUp } from "../ScrollUp/ScrollUp";
+import '../Countries/Countries.css';
 
 export const FavCountries = ({countries, favCountries}) => {
 
   let favCountriesObj = countries.filter(item => favCountries.includes(item.code));
   const [typeSort, changeTypeSort] = useState('name');
-
   let newFavObj = sortingCountries(typeSort, favCountriesObj);
 
   const countriesCode = newFavObj.map(client =>
@@ -47,4 +44,5 @@ export const FavCountries = ({countries, favCountries}) => {
       </div>
     </>
   );
+
 }
