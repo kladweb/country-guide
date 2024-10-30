@@ -4,6 +4,7 @@ import { auth } from "./firebase";
 import { setCurrUser } from "../redux/loginUsersSlice";
 import { useEffect, useState } from "react";
 import './login.css';
+import { ModalLogout } from "../components/ModalLogout/ModalLogout";
 
 export const Login = () => {
   const dispatch = useDispatch();
@@ -11,7 +12,7 @@ export const Login = () => {
   const currUser = useSelector(state => state.currUser.currUser);
   const srcAvatar = (currUser) ? currUser.photoURL : null;
   const userName = (currUser) ? currUser.displayName : null;
-  const [isLogoutOpen, setLogoutOpen] = useState(false);
+  const [showMod, setShowMod] = useState(false);
 
   const loginGoogle = function () {
     signInWithPopup(auth, provider)
@@ -45,11 +46,7 @@ export const Login = () => {
   }
 
   const changeLogoutOpen = () => {
-    setLogoutOpen(prevState => !prevState);
-  }
-
-  const openModalLogout = () => {
-    console.log('logout');
+    setShowMod(true);
   }
 
   return (
@@ -63,10 +60,11 @@ export const Login = () => {
             onClick={changeLogoutOpen}
           />
           {
-            (isLogoutOpen) &&
-            <a className='loginMenu logoutMenu' onClick={openModalLogout}>
-              Logout
-            </a>
+            (showMod) &&
+            <ModalLogout
+              setShowMod={setShowMod}
+              logoutGoogle={logoutGoogle}
+            />
           }
         </div> :
         <a className='loginMenu' onClick={loginGoogle}>
@@ -74,6 +72,5 @@ export const Login = () => {
         </a>
       }
     </>
-  )
-    ;
+  );
 }
