@@ -26,6 +26,7 @@ export const Login = () => {
       user.photoURL = getUser.photoURL;
       user.uid = getUser.uid;
       dispatch(setCurrUser({currUser: user}));
+      console.log(user);
 
     }).catch((error) => {
       const errorCode = error.code;
