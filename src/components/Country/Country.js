@@ -4,13 +4,16 @@ import { NavLink } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 import { updateFavData } from "../../redux/favCountriesSlice";
 import './Country.css';
+import { useDatabase } from "../../hooks/database";
 
 const Country = ({code, name, page}) => {
+  const {writeUserData} = useDatabase();
   const nodeRef = React.useRef(null);
   const [showCountry, changeShowCountry] = useState(false);
   const dispatch = useDispatch();
   const dataFav = useSelector(state => state.favCountries.data);
   const isFav = dataFav.includes(code);
+  const currUser = useSelector(state => state.currUser.currUser);
   const [showStar, changeShowStar] = useState(isFav);
 
   const deleteFavCountry = function (code) {
@@ -22,14 +25,17 @@ const Country = ({code, name, page}) => {
     } else toggleFav(code);
   }
   const toggleFav = function (code) {
-    changeShowStar(!showStar);
-    let newData = [...dataFav];
-    if (newData.includes(code)) {
-      newData = dataFav.filter(item => (item !== code));
-    } else {
-      newData.push(code);
+    if (currUser) {
+      changeShowStar(!showStar);
+      let newData = [...dataFav];
+      if (newData.includes(code)) {
+        newData = dataFav.filter(item => (item !== code));
+      } else {
+        newData.push(code);
+      }
+      dispatch(updateFavData(newData));
+      writeUserData(JSON.stringify(newData));
     }
-    dispatch(updateFavData(newData));
   }
 
   return (

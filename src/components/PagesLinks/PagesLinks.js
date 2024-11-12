@@ -7,19 +7,31 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../firebase/firebase";
 import { setCurrUser } from "../../redux/loginUsersSlice";
 import './PagesLinks.css';
+// import { useDatabase } from "../../hooks/database";
+import { updateFavData } from "../../redux/favCountriesSlice";
 
 export const PagesLinks = () => {
+  // const {readUserData} = useDatabase();
   const dispatch = useDispatch();
   const countries = useSelector(state => state.countries);
   const favCountries = useSelector(state => state.favCountries.data);
+  const currUser = useSelector(state => state.currUser.currUser);
 
   useEffect(
     () => {
       initUser();
+      // dispatch(updateFavData([]));
       if (countries.dataLoadState !== 2) {
         dispatch(favCountriesLoad);
       }
     }, []);
+
+  // useEffect(
+  //   () => {
+  //     if (currUser) {
+  //       readUserData(dispatch);
+  //     }
+  //   }, [currUser]);
 
   function initUser() {
     onAuthStateChanged(auth, (getUser) => {
