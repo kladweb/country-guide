@@ -66,7 +66,7 @@ export const PagesLinks = () => {
       <NavLink to="/" className={getLinkClass}>Main</NavLink>
       <NavLink to="/countries" className={getLinkClass}>Countries</NavLink>
       <NavLink to="/favorites" className={getLinkClass}>
-        Favorites
+        Visited
         {(getCountFav() > 0) &&
           <span className='countFav'>{getCountFav()}</span>
         }

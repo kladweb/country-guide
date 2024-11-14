@@ -69,7 +69,7 @@ export const Login = () => {
         <div className='menuAvatar'>
           <img
             className='imageAvatar'
-            src={'/img/avatar.jpg'}
+            src={currUser.photoURL}
             alt={userName}
             onClick={changeLogoutOpen}
           />

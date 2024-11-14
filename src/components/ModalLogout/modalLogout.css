@@ -91,17 +91,20 @@
   z-index: 20;
 }
 
+.imageAvatar {
+  /*font-size: 0.7rem;*/
+}
+
 @media (max-width: 48rem) {
   .modal-logout {
     width: 90%;
-    height: 15rem;
+    height: 10rem;
   }
 }
 
 @media (max-width: 36rem) {
-  .modal-logout {
-    width: fit-content;
-    height: fit-content;
-    display: block;
+  .modal-question {
+    margin-top: 2rem;
+    font-size: 1.25rem;
   }
 }

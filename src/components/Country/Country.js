@@ -56,7 +56,7 @@ const Country = ({code, name, page}) => {
             <button className='CountryInfo__title' onClick={() => {
               deleteFavCountry(code);
             }}>
-              <span>Favorite</span>
+              <span>Visited</span>
               <div className="icon">
                 <svg xmlns="http://www.w3.org/2000/svg" height="17" width="17">
                   <path
