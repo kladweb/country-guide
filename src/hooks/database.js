@@ -1,7 +1,6 @@
 import { useSelector } from 'react-redux';
 import { child, get, ref, set } from "firebase/database";
 import { database } from "../firebase/firebase";
-import { useEffect, useState } from "react";
 import { updateFavData } from "../redux/favCountriesSlice";
 
 export const useDatabase = () => {
@@ -26,6 +25,7 @@ export const useDatabase = () => {
           dispatch(updateFavData(data));
         } else {
           console.log("No data available");
+          dispatch(updateFavData([]));
         }
       }).catch((error) => {
         // console.error(error);

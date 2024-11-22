@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 import { updateFavData } from "../../redux/favCountriesSlice";
-import './Country.css';
 import { useDatabase } from "../../hooks/database";
+import './Country.css';
 
-const Country = ({code, name, page}) => {
+const Country = ({code, name, page, openInfo}) => {
   const {writeUserData} = useDatabase();
   const nodeRef = React.useRef(null);
   const [showCountry, changeShowCountry] = useState(false);
@@ -14,6 +13,7 @@ const Country = ({code, name, page}) => {
   const dataFav = useSelector(state => state.favCountries.data);
   const isFav = dataFav.includes(code);
   const currUser = useSelector(state => state.currUser.currUser);
+
   const [showStar, changeShowStar] = useState(isFav);
 
   const deleteFavCountry = function (code) {
@@ -38,6 +38,28 @@ const Country = ({code, name, page}) => {
     }
   }
 
+  const onOpenInfo = () => {
+    openInfo(code);
+  }
+
+  // const openInfo = () => {
+  //   console.log(params.countid, ' : ', activeCountry);
+  //   if (params.countid && params.countid === activeCountry) {
+  //     dispatch(setOpenInfoBar('close'));
+  //     dispatch(setActiveCountry(null));
+  //     console.log('ff1')
+  //   } else {
+  //     if (params.countid) {
+  //       console.log('ff2')
+  //     } else {
+  //       console.log('ff3')
+  //       dispatch(setOpenInfoBar('open'));
+  //     }
+  //     dispatch(setActiveCountry(code));
+  //     navigate(page + code);
+  //   }
+  // }
+
   return (
     <CSSTransition
       timeout={700}
@@ -50,9 +72,9 @@ const Country = ({code, name, page}) => {
           <img className='flag-preview' src={`/img/flags/${code}.png`} alt={name} />
           <span className={`country-title ${name.length > 24 ? 'country-title__small' : null}`}>{name}</span>
           <div className='CountryLinks'>
-            <NavLink to={page + code} className='CountryInfo'>
+            <a className='CountryInfo' onClick={onOpenInfo}>
               <button className='CountryInfo__title'>Information</button>
-            </NavLink>
+            </a>
             <button className='CountryInfo__title' onClick={() => {
               deleteFavCountry(code);
             }}>

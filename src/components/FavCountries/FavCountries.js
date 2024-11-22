@@ -1,15 +1,32 @@
 import React, { useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate, useParams } from 'react-router-dom';
 import Country from '../Country/Country';
 import { sortingCountries } from "../../utilities/sortingCountries";
 import { ScrollUp } from "../ScrollUp/ScrollUp";
 import '../Countries/Countries.css';
+import { setOpenInfoBar } from "../../redux/isOpenInfoBarSlice";
+import { useDispatch } from "react-redux";
 
 export const FavCountries = ({countries, favCountries}) => {
-
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const params = useParams();
   let favCountriesObj = countries.filter(item => favCountries.includes(item.code));
   const [typeSort, changeTypeSort] = useState('name');
   let newFavObj = sortingCountries(typeSort, favCountriesObj);
+  const page = params.part;
+
+  const openInfo = (code) => {
+    if (params.countid && params.countid === code) {
+      dispatch(setOpenInfoBar('close'));
+    } else {
+      if (params.countid) {
+      } else {
+        dispatch(setOpenInfoBar('open'));
+      }
+      navigate(`/favorites/` + code);
+    }
+  }
 
   const countriesCode = newFavObj.map(client =>
     <Country
@@ -17,6 +34,7 @@ export const FavCountries = ({countries, favCountries}) => {
       code={client.code}
       name={client.name}
       page='/favorites/'
+      openInfo={openInfo}
     />
   );
 
