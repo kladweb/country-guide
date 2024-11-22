@@ -5,7 +5,6 @@ import { setCurrUser } from "../redux/loginUsersSlice";
 import { useEffect, useState } from "react";
 import './login.css';
 import { ModalLogout } from "../components/ModalLogout/ModalLogout";
-import { getDatabase, ref, set } from "firebase/database";
 import { updateFavData } from "../redux/favCountriesSlice";
 import { useDatabase } from "../hooks/database";
 
@@ -37,7 +36,6 @@ export const Login = () => {
       user.photoURL = getUser.photoURL;
       user.uid = getUser.uid;
       dispatch(setCurrUser({currUser: user}));
-      console.log(user);
     }).catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;

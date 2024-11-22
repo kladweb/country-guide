@@ -32,8 +32,6 @@ export const PageFavorites = () => {
     [countries, currUser]
   );
 
-  console.log(favDataLoadState);
-
   return (
     <div className='CountryList'>
       <div className='content'>

@@ -12,7 +12,6 @@ export const favCountriesSlice = createSlice({
     updateFavData: (state, action) => {
       state.data = action.payload;
       state.favDataLoadState = 2;
-      // window.localStorage.setItem('favCountries', JSON.stringify(action.payload));
     },
   }
 });
