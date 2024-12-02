@@ -77,7 +77,9 @@ export const PagesLinks = () => {
         }
       </NavLink>
       <NavLink to="/about" className={getLinkClass}>About us</NavLink>
-      <Login />
+      <NavLink to="/login" className={getLinkClass}>
+        <Login />
+      </NavLink>
     </div>
   );
 };
