@@ -1,16 +1,19 @@
 import React from "react";
-import { CountryAbout } from "../components/CountryAbout/CountryAbout";
 import { useDispatch, useSelector } from "react-redux";
 import { GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 import { auth } from "../firebase/firebase";
 import { setCurrUser } from "../redux/loginUsersSlice";
 import { updateFavData } from "../redux/favCountriesSlice";
 import { Login } from "../components/Login/Login";
+import { UserPage } from "../components/UserPage/UserPage";
+import { useDatabase } from "../hooks/database";
 
-export const PageLogin = () => {
+export const PageLoginLogout = () => {
   const dispatch = useDispatch();
+  const {writeUserCountries} = useDatabase();
   const currUser = useSelector(state => state.currUser.currUser);
   const provider = new GoogleAuthProvider();
+  const favCountries = useSelector(state => state.favCountries.data);
 
   const loginGoogle = function () {
     signInWithPopup(auth, provider)
@@ -24,6 +27,9 @@ export const PageLogin = () => {
       user.photoURL = getUser.photoURL;
       user.uid = getUser.uid;
       dispatch(setCurrUser({currUser: user}));
+      if (!favCountries) {
+        writeUserCountries(JSON.stringify([]));
+      }
     }).catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
@@ -48,11 +54,10 @@ export const PageLogin = () => {
     <div className='CountryAbout'>
       <div className='content'>
         {(currUser) ?
-          <a className='loginMenu'
-             onClick={logoutGoogle}
-          >
-            Logout
-          </a>
+          <UserPage
+            logoutGoogle={logoutGoogle}
+            currUser={currUser}
+          />
           :
           <Login loginGoogle={loginGoogle} />
         }

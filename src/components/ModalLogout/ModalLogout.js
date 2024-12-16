@@ -3,7 +3,7 @@ import { CSSTransition } from 'react-transition-group';
 
 import './modalLogout.css';
 
-export const ModalLogout = ({setShowMod, logoutGoogle}) => {
+export const ModalLogout = ({setShowMod, logoutGoogle, clearData}) => {
   const nodeRef = React.useRef(null);
   const [closeMod, setCloseMod] = useState(true);
   const [isNextLogout, setNextLogout] = useState(false);
@@ -43,7 +43,12 @@ export const ModalLogout = ({setShowMod, logoutGoogle}) => {
       }}>
         <div className='modal-logout' onClick={e => e.stopPropagation()}>
           <span className='button-close material-icons-outlined' onClick={onCloseMod}>close</span>
-          <div className='modal-question'>Do yo want to logout?</div>
+          {
+            (clearData) ?
+              <div className='modal-question'>Do yo want to logout<br/>and clear all data?</div>
+              :
+              <div className='modal-question'>Do yo want to logout?</div>
+          }
           <button onClick={onLogout}>YES</button>
           <button onClick={onCloseMod}>NO</button>
         </div>

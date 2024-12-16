@@ -1,4 +1,28 @@
 .loginButton {
-  display: block;
-  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity .2s;
+}
+
+.loginButton:hover {
+  opacity: 1;
+  transition: opacity .3s;
+}
+
+.loginButton img, span {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.loginButton span {
+  margin: 0 0.5rem;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #61ff10;
 }

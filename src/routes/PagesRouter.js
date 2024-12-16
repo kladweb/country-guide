@@ -6,7 +6,7 @@ import { PageCountries } from '../pages/PageCountries';
 import { PageCountriesList } from '../pages/PageCountriesList';
 import { CountryInfoBar } from '../pages/CountryInfoBar';
 import { PageFavorites } from '../pages/PageFavorites';
-import { PageLogin } from "../pages/PageLogin";
+import { PageLoginLogout } from "../pages/PageLoginLogout";
 
 export const PagesRouter = () => {
   return (
@@ -21,7 +21,7 @@ export const PagesRouter = () => {
         <Route path=":countid" element={<CountryInfoBar pageCount={'favorites'}/>}/>
       </Route>
       <Route path="/about" element={<PageAbout/>}/>
-      <Route path="/login" element={<PageLogin/>}/>
+      <Route path="/login" element={<PageLoginLogout/>}/>
     </Routes>
   );
 };
