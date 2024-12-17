@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useParams } from 'react-router-dom';
 import { favCountriesLoad } from "../../redux/favCountriesLoad";
-import { LoginMenu } from "../../firebase/LoginMenu";
+import { Login } from "../../firebase/Login";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../firebase/firebase";
 import { setCurrUser } from "../../redux/loginUsersSlice";
@@ -77,9 +77,7 @@ export const PagesLinks = () => {
         }
       </NavLink>
       <NavLink to="/about" className={getLinkClass}>About us</NavLink>
-      <NavLink to="/login" className={getLinkClass}>
-        <LoginMenu />
-      </NavLink>
+      <Login />
     </div>
   );
 };
