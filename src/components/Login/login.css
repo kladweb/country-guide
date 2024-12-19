@@ -15,12 +15,12 @@
   transition: opacity .3s;
 }
 
-.loginButton img, span {
+.google-logo, .google-span {
   display: inline-block;
   vertical-align: middle;
 }
 
-.loginButton span {
+.google-span {
   margin: 0 0.5rem;
   font-size: 2rem;
   font-weight: 400;

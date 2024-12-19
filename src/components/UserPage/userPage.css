@@ -1,4 +1,4 @@
-.userPage h2 {
+.user-name {
   padding: 1rem 0;
   font-size: 2rem;
   font-weight: 500;
@@ -12,19 +12,19 @@
   text-align: center;
 }
 
-.isAllowShowVisited input, span {
+.input_isAllow, .isAllow_description {
   display: inline-block;
   vertical-align: middle;
 }
 
-.isAllowShowVisited input {
+.input_isAllow {
   width: 1.4rem;
   height: 1.4rem;
   margin: 0 0.5rem;
   accent-color: rgba(20, 161, 20, 0.78);
 }
 
-.isAllowShowVisited span {
+.isAllow_description {
   font-size: 1.5rem;
   color: #eaeaea;
 }
