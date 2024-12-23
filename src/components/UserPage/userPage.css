@@ -1,4 +1,4 @@
-.user-name {
+.currentUserName {
   padding: 1rem 0;
   font-size: 2rem;
   font-weight: 500;
@@ -12,19 +12,24 @@
   text-align: center;
 }
 
-.input_isAllow, .isAllow_description {
+.shareInput, .shareDescription {
   display: inline-block;
   vertical-align: middle;
 }
 
-.input_isAllow {
+.shareInput {
   width: 1.4rem;
   height: 1.4rem;
   margin: 0 0.5rem;
   accent-color: rgba(20, 161, 20, 0.78);
 }
 
-.isAllow_description {
+.shareInput:not(:checked) {
+  opacity: 0.2;
+}
+
+
+.shareDescription {
   font-size: 1.5rem;
   color: #eaeaea;
 }

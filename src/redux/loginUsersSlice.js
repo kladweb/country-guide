@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   currUser: 0,
   idCurrUser: null,
+  isAllowShowVisited: true
 }
 
 export const loginUserSlice = createSlice({
@@ -15,9 +16,15 @@ export const loginUserSlice = createSlice({
         state.idCurrUser = action.payload.currUser.uid;
       }
     },
+    setAllowShowVisited: (state, action) => {
+      state.isAllowShowVisited = action.payload;
+    }
   }
 });
 
-export const {setCurrUser} = loginUserSlice.actions;
+export const {
+  setCurrUser,
+  setAllowShowVisited
+} = loginUserSlice.actions;
 
 export default loginUserSlice.reducer;

@@ -12,6 +12,7 @@
 }
 
 .loginMenu {
+  display: inline-block;
   font-size: 1.3rem;
   vertical-align: middle;
   color: #b1091d;

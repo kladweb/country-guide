@@ -37,10 +37,10 @@ export const UserPage = ({logoutGoogle, currUser}) => {
           clearData={clearData}
         />
       }
-      <h2 className='user-name'>{currUser.displayName}</h2>
+      <h2 className='currentUserName'>{currUser.displayName}</h2>
       <div className="isAllowShowVisited">
-        <input className='input_isAllow' type='checkbox' checked={isAllowed} onChange={setAllowVisited} />
-        <span className='isAllow_description'>allow other users to see the countries I have visited (in progress...)</span>
+        <input className='shareInput' type='checkbox' checked={isAllowed} onChange={setAllowVisited} />
+        <span className='shareDescription'>allow other users to see the countries I have visited (in progress...)</span>
       </div>
       <button className='logoutButton' onClick={openModal}>Logout</button>
       <button className='logoutButton logoutClear' name="clear" onClick={openModal}>Logout and clear data</button>
