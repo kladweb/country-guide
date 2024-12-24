@@ -1,28 +1,19 @@
-import { signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged } from "firebase/auth";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { auth, database } from "./firebase";
+import { GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
+import { auth } from "../firebase/firebase";
 import { setCurrUser } from "../redux/loginUsersSlice";
-import { useEffect, useState } from "react";
-import './login.css';
-import { ModalLogout } from "../components/ModalLogout/ModalLogout";
 import { updateFavData } from "../redux/favCountriesSlice";
+import { Login } from "../components/Login/Login";
+import { UserPage } from "../components/UserPage/UserPage";
 import { useDatabase } from "../hooks/database";
 
-export const Login = () => {
+export const PageLoginLogout = () => {
   const dispatch = useDispatch();
-  const provider = new GoogleAuthProvider();
+  const {writeUserCountries} = useDatabase();
   const currUser = useSelector(state => state.currUser.currUser);
-  const {readUserData} = useDatabase();
-  const srcAvatar = (currUser) ? currUser.photoURL : null;
-  const userName = (currUser) ? currUser.displayName : null;
-  const [showMod, setShowMod] = useState(false);
-
-  useEffect(
-    () => {
-      if (currUser) {
-        readUserData(dispatch);
-      }
-    }, [currUser]);
+  const provider = new GoogleAuthProvider();
+  const favCountries = useSelector(state => state.favCountries.data);
 
   const loginGoogle = function () {
     signInWithPopup(auth, provider)
@@ -36,6 +27,9 @@ export const Login = () => {
       user.photoURL = getUser.photoURL;
       user.uid = getUser.uid;
       dispatch(setCurrUser({currUser: user}));
+      if (!favCountries) {
+        writeUserCountries(JSON.stringify([]));
+      }
     }).catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
@@ -43,7 +37,6 @@ export const Login = () => {
       const credential = GoogleAuthProvider.credentialFromError(error);
       console.log(error);
       dispatch(updateFavData([]));
-
     });
   }
 
@@ -57,32 +50,18 @@ export const Login = () => {
     });
   }
 
-  const changeLogoutOpen = () => {
-    setShowMod(true);
-  }
-
   return (
-    <>
-      {(currUser) ?
-        <div className='menuAvatar'>
-          <img
-            className='imageAvatar'
-            src={currUser.photoURL}
-            alt={userName}
-            onClick={changeLogoutOpen}
+    <div className='CountryAbout'>
+      <div className='content'>
+        {(currUser) ?
+          <UserPage
+            logoutGoogle={logoutGoogle}
+            currUser={currUser}
           />
-          {
-            (showMod) &&
-            <ModalLogout
-              setShowMod={setShowMod}
-              logoutGoogle={logoutGoogle}
-            />
-          }
-        </div> :
-        <a className='loginMenu' onClick={loginGoogle}>
-          Login
-        </a>
-      }
-    </>
+          :
+          <Login loginGoogle={loginGoogle} />
+        }
+      </div>
+    </div>
   );
 }
