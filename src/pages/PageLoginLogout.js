@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup, signOut, deleteUser } from "firebase/auth";
 import { auth } from "../firebase/firebase";
 import { setCurrUser } from "../redux/loginUsersSlice";
 import { updateFavData } from "../redux/favCountriesSlice";
@@ -50,6 +50,18 @@ export const PageLoginLogout = () => {
     });
   }
 
+  const deleteUserFromApp = function () {
+    const user = auth.currentUser;
+    deleteUser(user).then(() => {
+      dispatch(setCurrUser({currUser: auth.currentUser}));
+      dispatch(updateFavData([]));
+      // User deleted.
+    }).catch((error) => {
+      // An error ocurred
+      // ...
+    });
+  }
+
   return (
     <div className='CountryAbout'>
       <div className='content'>
@@ -57,6 +69,7 @@ export const PageLoginLogout = () => {
           <UserPage
             logoutGoogle={logoutGoogle}
             currUser={currUser}
+            deleteUserFromApp={deleteUserFromApp}
           />
           :
           <Login loginGoogle={loginGoogle} />

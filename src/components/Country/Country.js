@@ -6,7 +6,7 @@ import { useDatabase } from "../../hooks/database";
 import './Country.css';
 
 const Country = ({code, name, page, openInfo}) => {
-  const {writeUserData} = useDatabase();
+  const {writeUserCountries} = useDatabase();
   const nodeRef = React.useRef(null);
   const [showCountry, changeShowCountry] = useState(false);
   const dispatch = useDispatch();
@@ -34,7 +34,7 @@ const Country = ({code, name, page, openInfo}) => {
         newData.push(code);
       }
       dispatch(updateFavData(newData));
-      writeUserData(JSON.stringify(newData));
+      writeUserCountries(JSON.stringify(newData));
     }
   }
 

@@ -5,9 +5,9 @@ import { useDatabase } from "../../hooks/database";
 import { useDispatch, useSelector } from "react-redux";
 import { setAllowShowVisited } from "../../redux/loginUsersSlice";
 
-export const UserPage = ({logoutGoogle, currUser}) => {
+export const UserPage = ({logoutGoogle, currUser, deleteUserFromApp}) => {
   const dispatch = useDispatch();
-  const {writeUserPermissionVisited} = useDatabase();
+  const {writeUserPermissionVisited, writeUserCountries} = useDatabase();
   const isAllowed = useSelector(state => state.currUser.isAllowShowVisited);
 
   const [showMod, setShowMod] = useState(false);
@@ -27,6 +27,12 @@ export const UserPage = ({logoutGoogle, currUser}) => {
     dispatch(setAllowShowVisited(!isAllowed));
   }
 
+  const deleteUserData = () => {
+    writeUserCountries(null);
+    writeUserPermissionVisited(null);
+    // deleteUserFromApp(); //TODO add this case in future
+  }
+
   return (
     <div className="userPage">
       {
@@ -35,6 +41,7 @@ export const UserPage = ({logoutGoogle, currUser}) => {
           setShowMod={setShowMod}
           logoutGoogle={logoutGoogle}
           clearData={clearData}
+          deleteUserData={deleteUserData}
         />
       }
       <h2 className='currentUserName'>{currUser.displayName}</h2>
