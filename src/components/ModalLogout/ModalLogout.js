@@ -34,9 +34,8 @@ export const ModalLogout = ({setShowMod, logoutGoogle, clearData, deleteUserData
         if (isNextLogout) {
           if (clearData) {
             deleteUserData();
-          } else {
-            logoutGoogle();
           }
+          logoutGoogle();
         }
       }}
       mountOnEnter

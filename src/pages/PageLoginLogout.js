@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { GoogleAuthProvider, signInWithPopup, signOut, deleteUser } from "firebase/auth";
 import { auth } from "../firebase/firebase";
@@ -10,10 +10,21 @@ import { useDatabase } from "../hooks/database";
 
 export const PageLoginLogout = () => {
   const dispatch = useDispatch();
-  const {writeUserCountries} = useDatabase();
+  const {writeUserCountries, writeUserPermissionVisited} = useDatabase();
   const currUser = useSelector(state => state.currUser.currUser);
   const provider = new GoogleAuthProvider();
   const favCountries = useSelector(state => state.favCountries.data);
+
+  useEffect(() => {
+    console.log("CURRENT USER:", currUser);
+    if (currUser) {
+      writeUserPermissionVisited(true);
+      // console.log("FAV:", favCountries, " | ", Boolean(favCountries));
+      if (favCountries.length <= 0) {
+        writeUserCountries(JSON.stringify([]));
+      }
+    }
+  }, [currUser]);
 
   const loginGoogle = function () {
     signInWithPopup(auth, provider)
@@ -27,10 +38,9 @@ export const PageLoginLogout = () => {
       user.photoURL = getUser.photoURL;
       user.uid = getUser.uid;
       dispatch(setCurrUser({currUser: user}));
-      if (!favCountries) {
-        writeUserCountries(JSON.stringify([]));
-      }
-    }).catch((error) => {
+      return user.uid;
+    })
+    .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
       const email = error.customData.email;

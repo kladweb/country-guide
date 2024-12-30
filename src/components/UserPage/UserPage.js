@@ -5,7 +5,7 @@ import { useDatabase } from "../../hooks/database";
 import { useDispatch, useSelector } from "react-redux";
 import { setAllowShowVisited } from "../../redux/loginUsersSlice";
 
-export const UserPage = ({logoutGoogle, currUser, deleteUserFromApp}) => {
+export const UserPage = ({logoutGoogle, currUser}) => {
   const dispatch = useDispatch();
   const {writeUserPermissionVisited, writeUserCountries} = useDatabase();
   const isAllowed = useSelector(state => state.currUser.isAllowShowVisited);
