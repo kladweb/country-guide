@@ -10,19 +10,16 @@ import { useDatabase } from "../hooks/database";
 
 export const PageLoginLogout = () => {
   const dispatch = useDispatch();
-  const {writeUserCountries, writeUserPermissionVisited} = useDatabase();
+  const {readUserCountries, writeUserPermissionVisited} = useDatabase();
   const currUser = useSelector(state => state.currUser.currUser);
   const provider = new GoogleAuthProvider();
   const favCountries = useSelector(state => state.favCountries.data);
 
   useEffect(() => {
-    console.log("CURRENT USER:", currUser);
     if (currUser) {
       writeUserPermissionVisited(true);
+      // readUserCountries(dispatch);
       // console.log("FAV:", favCountries, " | ", Boolean(favCountries));
-      if (favCountries.length <= 0) {
-        writeUserCountries(JSON.stringify([]));
-      }
     }
   }, [currUser]);
 
