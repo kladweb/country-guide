@@ -20,8 +20,7 @@ export const FavCountries = ({countries, favCountries}) => {
     if (params.countid && params.countid === code) {
       dispatch(setOpenInfoBar('close'));
     } else {
-      if (params.countid) {
-      } else {
+      if (!params.countid) {
         dispatch(setOpenInfoBar('open'));
       }
       navigate(`/favorites/` + code);
