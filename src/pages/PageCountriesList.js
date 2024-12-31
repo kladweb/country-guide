@@ -16,8 +16,7 @@ export const PageCountriesList = () => {
     if (params.countid && params.countid === code) {
       dispatch(setOpenInfoBar('close'));
     } else {
-      if (params.countid) {
-      } else {
+      if (!params.countid) {
         dispatch(setOpenInfoBar('open'));
       }
       navigate(`/countries/${page}/` + code);

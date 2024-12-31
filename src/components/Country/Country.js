@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { CSSTransition } from 'react-transition-group';
 import { updateFavData } from "../../redux/favCountriesSlice";
@@ -7,6 +8,7 @@ import './Country.css';
 
 const Country = ({code, name, page, openInfo}) => {
   const {writeUserCountries} = useDatabase();
+  const navigate = useNavigate();
   const nodeRef = React.useRef(null);
   const [showCountry, changeShowCountry] = useState(false);
   const dispatch = useDispatch();
@@ -35,6 +37,8 @@ const Country = ({code, name, page, openInfo}) => {
       }
       dispatch(updateFavData(newData));
       writeUserCountries(JSON.stringify(newData));
+    } else {
+      navigate('/login');
     }
   }
 
@@ -72,9 +76,9 @@ const Country = ({code, name, page, openInfo}) => {
           <img className='flag-preview' src={`/img/flags/${code}.png`} alt={name} />
           <span className={`country-title ${name.length > 24 ? 'country-title__small' : null}`}>{name}</span>
           <div className='CountryLinks'>
-            <a className='CountryInfo' onClick={onOpenInfo}>
-              <button className='CountryInfo__title'>Information</button>
-            </a>
+            <div className='CountryInfo'>
+              <button className='CountryInfo__title' onClick={onOpenInfo}>Information</button>
+            </div>
             <button className='CountryInfo__title' onClick={() => {
               deleteFavCountry(code);
             }}>
