@@ -22,10 +22,12 @@ export const countriesSlice = createSlice({
       state.countPages = Math.ceil(state.data.length / 10);
     },
     updateCurrentData: (state, action) => {
-      if (action.payload.page !== 'all') {
-        state.currentData = action.payload.data.slice((action.payload.page - 1) * 10, action.payload.page * 10);
-      } else {
+      if (action.payload.page === 'all') {
         state.currentData = action.payload.data;
+      } else {
+        if (action.payload.page !== 'visited') {
+          state.currentData = action.payload.data.slice((action.payload.page - 1) * 10, action.payload.page * 10);
+        }
       }
     }
   }

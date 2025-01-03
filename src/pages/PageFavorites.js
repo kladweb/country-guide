@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { countriesLoad } from '../redux/countriesLoad';
-import { favCountriesLoad } from '../redux/favCountriesLoad';
 import { FavCountries } from '../components/FavCountries/FavCountries';
 import { LoadingStatus } from "../components/LoadingStatus/LoadingStatus";
 import { updateFavData } from "../redux/favCountriesSlice";

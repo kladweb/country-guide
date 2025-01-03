@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import './CountryInfo.css';
 
-export const CountryInfo = ({code, name, population, area, pageCount}) => {
+export const CountryInfo = ({code, name, population, area}) => {
   const params = useParams();
   const page = params.part;
   const navigate = useNavigate();
@@ -17,7 +17,7 @@ export const CountryInfo = ({code, name, population, area, pageCount}) => {
   const closeInfo = () => {
     changeClassInfo('country-info hide');
     setTimeout(() => {
-      (page) ? navigate(`/${pageCount}/${page}`) : navigate(`/${pageCount}`);
+      navigate(`/countries/${page}`);
     }, 450);
   }
 
@@ -32,7 +32,7 @@ export const CountryInfo = ({code, name, population, area, pageCount}) => {
     <div className={classInfo}>
       <div className='content country-info__content'>
         <h2 className='sectionInfo country-info__name'>&laquo;{name}&raquo;</h2>
-        <img className='sectionInfo flag-preview-info' src={`/img/flags/${code}.png`} alt={name} />
+        <img className='sectionInfo flag-preview-info' src={`/img/flags/${code}.png`} alt={name}/>
         <div className='sectionInfo country-info__properties'>
           <h3>Population: <span className='country-info__value'>{people}</span></h3>
           <h3>Total area: <span className='country-info__value'>{square}</span> km<sup>2</sup></h3>

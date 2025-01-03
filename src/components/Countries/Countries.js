@@ -10,21 +10,19 @@ export const Countries = () => {
   const params = useParams();
   const dispatch = useDispatch();
   const part = params.part;
-  let countPages = useSelector(state => state.countries.countPages);
-  let dataCountries = useSelector(state => state.countries.data);
-  let navigate = useNavigate();
+  const countPages = useSelector(state => state.countries.countPages);
+  const dataCountries = useSelector(state => state.countries.data);
+  const navigate = useNavigate();
 
   //in this project, the "countries" page does not exist, so we immediately go to the "countries/all" page. It would be
   //possible to make just "countries" instead of "countries/all", but in this case the "Countries" menu button
   //ceases to be active when navigating inside this page to any other sub-page.
-  useEffect(
-    () => {
-      if (!part) {
-        navigate('/countries/all');
-      }
-    },
-    [part, navigate]
-  );
+  // useEffect(
+  //   () => {
+  //     if (!part) {
+  //       navigate('/countries/all');
+  //     }
+  //   }, [part, navigate]);
 
   const navPagesCode = () => {
     let navPages = [];
@@ -64,13 +62,18 @@ export const Countries = () => {
           <option value="area-des">total area (descending)</option>
         </select>
       </div>
-      <div className='navPages'>
-        <span className='navPages-items navPages-name'>PAGES: </span>
-        <NavLink to={`/countries/all`} className={getLinkClass} key={countPages + 1}>
-          <span className='navPages-items'>ALL</span>
-        </NavLink>
-        {navPagesCode()}
-      </div>
+      {
+        (part !== 'visited') &&
+        <>
+          <div className='navPages'>
+            <span className='navPages-items navPages-name'>PAGES: </span>
+            <NavLink to={`/countries/all`} className={getLinkClass} key={countPages + 1}>
+              <span className='navPages-items'>ALL</span>
+            </NavLink>
+            {navPagesCode()}
+          </div>
+        </>
+      }
       <Outlet/>
     </>
   );

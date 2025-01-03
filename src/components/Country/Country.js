@@ -1,68 +1,11 @@
 import React, { useState } from 'react';
-import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
 import { CSSTransition } from 'react-transition-group';
-import { updateFavData } from "../../redux/favCountriesSlice";
-import { useDatabase } from "../../hooks/database";
 import './Country.css';
 
-const Country = ({code, name, page, openInfo}) => {
-  const {writeUserCountries} = useDatabase();
-  const navigate = useNavigate();
+const Country = ({code, name, isFav, deleteFavCountry, toggleFav, openInfo}) => {
   const nodeRef = React.useRef(null);
   const [showCountry, changeShowCountry] = useState(false);
-  const dispatch = useDispatch();
-  const dataFav = useSelector(state => state.favCountries.data);
-  const isFav = dataFav.includes(code);
-  const currUser = useSelector(state => state.currUser.currUser);
-
   const [showStar, changeShowStar] = useState(isFav);
-
-  const deleteFavCountry = function (code) {
-    if (page === '/favorites/') {
-      changeShowStar(!showStar);
-      setTimeout(() => {
-        changeShowCountry(true);
-      }, 100);
-    } else toggleFav(code);
-  }
-  const toggleFav = function (code) {
-    if (currUser) {
-      changeShowStar(!showStar);
-      let newData = [...dataFav];
-      if (newData.includes(code)) {
-        newData = dataFav.filter(item => (item !== code));
-      } else {
-        newData.push(code);
-      }
-      dispatch(updateFavData(newData));
-      writeUserCountries(JSON.stringify(newData));
-    } else {
-      navigate('/login');
-    }
-  }
-
-  const onOpenInfo = () => {
-    openInfo(code);
-  }
-
-  // const openInfo = () => {
-  //   console.log(params.countid, ' : ', activeCountry);
-  //   if (params.countid && params.countid === activeCountry) {
-  //     dispatch(setOpenInfoBar('close'));
-  //     dispatch(setActiveCountry(null));
-  //     console.log('ff1')
-  //   } else {
-  //     if (params.countid) {
-  //       console.log('ff2')
-  //     } else {
-  //       console.log('ff3')
-  //       dispatch(setOpenInfoBar('open'));
-  //     }
-  //     dispatch(setActiveCountry(code));
-  //     navigate(page + code);
-  //   }
-  // }
 
   return (
     <CSSTransition
@@ -70,17 +13,17 @@ const Country = ({code, name, page, openInfo}) => {
       nodeRef={nodeRef}
       classNames='land'
       in={!showCountry}
-      onExited={() => toggleFav(code)}>
+      onExited={() => toggleFav(code, showStar, changeShowStar)}>
       <div ref={nodeRef} className='Country'>
         <div className={`flag-frame${isFav && showStar ? ' isFav' : ''}`}>
-          <img className='flag-preview' src={`/img/flags/${code}.png`} alt={name} />
+          <img className='flag-preview' src={`/img/flags/${code}.png`} alt={name}/>
           <span className={`country-title ${name.length > 24 ? 'country-title__small' : null}`}>{name}</span>
           <div className='CountryLinks'>
             <div className='CountryInfo'>
-              <button className='CountryInfo__title' onClick={onOpenInfo}>Information</button>
+              <button className='CountryInfo__title' onClick={() => openInfo(code)}>Information</button>
             </div>
             <button className='CountryInfo__title' onClick={() => {
-              deleteFavCountry(code);
+              deleteFavCountry(code, showStar, changeShowStar, changeShowCountry);
             }}>
               <span>Visited</span>
               <div className="icon">
