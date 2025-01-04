@@ -62,5 +62,4 @@ export const useDatabase = () => {
   }
 
   return {writeUserCountries, readUserCountries, writeUserPermissionVisited, readUserPermissionVisited};
-  // return {writeUserData: writeUserCountries, readUserData: readUserCountries};
 }

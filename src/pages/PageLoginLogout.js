@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { GoogleAuthProvider, signInWithPopup, signOut, deleteUser } from "firebase/auth";
 import { auth } from "../firebase/firebase";
@@ -10,16 +10,13 @@ import { useDatabase } from "../hooks/database";
 
 export const PageLoginLogout = () => {
   const dispatch = useDispatch();
-  const {readUserCountries, writeUserPermissionVisited} = useDatabase();
+  const {writeUserPermissionVisited} = useDatabase();
   const currUser = useSelector(state => state.currUser.currUser);
   const provider = new GoogleAuthProvider();
-  const favCountries = useSelector(state => state.favCountries.data);
 
   useEffect(() => {
     if (currUser) {
       writeUserPermissionVisited(true);
-      // readUserCountries(dispatch);
-      // console.log("FAV:", favCountries, " | ", Boolean(favCountries));
     }
   }, [currUser]);
 

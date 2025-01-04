@@ -1,4 +1,3 @@
-import React from 'react';
 import { PagesLinks } from "../PagesLinks/PagesLinks";
 
 export const Header = () => (

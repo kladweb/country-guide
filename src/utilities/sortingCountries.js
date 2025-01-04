@@ -1,5 +1,3 @@
-import React from 'react';
-
 export function sortingCountries(e, dataListCountries) {
   let newData = [...dataListCountries];
   switch (e) {
