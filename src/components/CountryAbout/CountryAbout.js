@@ -1,5 +1,3 @@
-import React from 'react';
-
 import './CountryAbout.css';
 
 export const CountryAbout = () => {

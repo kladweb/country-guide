@@ -1,10 +1,9 @@
-import React, { useEffect } from 'react';
 import { NavLink, Outlet, useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
-import './Countries.css';
 import { updateData } from "../../redux/countriesSlice";
 import { sortingCountries } from "../../utilities/sortingCountries";
 import { ScrollUp } from "../ScrollUp/ScrollUp";
+import './Countries.css';
 
 export const Countries = () => {
   const params = useParams();
@@ -12,17 +11,6 @@ export const Countries = () => {
   const part = params.part;
   const countPages = useSelector(state => state.countries.countPages);
   const dataCountries = useSelector(state => state.countries.data);
-  const navigate = useNavigate();
-
-  //in this project, the "countries" page does not exist, so we immediately go to the "countries/all" page. It would be
-  //possible to make just "countries" instead of "countries/all", but in this case the "Countries" menu button
-  //ceases to be active when navigating inside this page to any other sub-page.
-  // useEffect(
-  //   () => {
-  //     if (!part) {
-  //       navigate('/countries/all');
-  //     }
-  //   }, [part, navigate]);
 
   const navPagesCode = () => {
     let navPages = [];

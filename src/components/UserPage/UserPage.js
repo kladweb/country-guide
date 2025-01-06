@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import './userPage.css';
 import { ModalLogout } from "../ModalLogout/ModalLogout";
 import { useDatabase } from "../../hooks/database";

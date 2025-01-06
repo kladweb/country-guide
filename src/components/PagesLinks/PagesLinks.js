@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useParams } from 'react-router-dom';
 import { LoginMenu } from "../../firebase/LoginMenu";
@@ -11,7 +11,6 @@ export const PagesLinks = () => {
   const dispatch = useDispatch();
   const favCountries = useSelector(state => state.favCountries.data);
   const countFav = (favCountries) ? favCountries.length : null;
-  const params = useParams();
 
   useEffect(
     () => {
