@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { GoogleAuthProvider, signInWithPopup, signOut, deleteUser } from "firebase/auth";
 import { auth } from "../firebase/firebase";
-import { setCurrUser } from "../redux/loginUsersSlice";
+import { setCurrUser, setUserName, setUserPhoto } from "../redux/loginUsersSlice";
 import { updateFavData } from "../redux/favCountriesSlice";
 import { Login } from "../components/Login/Login";
 import { UserPage } from "../components/UserPage/UserPage";
@@ -10,8 +10,9 @@ import { useDatabase } from "../hooks/database";
 
 export const PageLoginLogout = () => {
   const dispatch = useDispatch();
-  const {writeUserPermissionVisited} = useDatabase();
+  const {writeUserPermissionVisited, writeUserName, writeUserPhoto} = useDatabase();
   const currUser = useSelector(state => state.currUser.currUser);
+  const userName = useSelector(state => state.currUser.userName);
   const provider = new GoogleAuthProvider();
 
   useEffect(() => {
@@ -19,6 +20,17 @@ export const PageLoginLogout = () => {
       writeUserPermissionVisited(true);
     }
   }, [currUser]);
+
+  useEffect(() => {
+    if (currUser && userName === '') {
+      writeUserName(currUser.displayName);
+      dispatch(setUserName(currUser.displayName));
+    }
+    if (currUser) {
+      writeUserPhoto(currUser.photoURL);
+      dispatch(setUserPhoto(currUser.photoURL));
+    }
+  }, [userName]);
 
   const loginGoogle = function () {
     signInWithPopup(auth, provider)
@@ -76,7 +88,7 @@ export const PageLoginLogout = () => {
             deleteUserFromApp={deleteUserFromApp}
           />
           :
-          <Login loginGoogle={loginGoogle} />
+          <Login loginGoogle={loginGoogle}/>
         }
       </div>
     </div>

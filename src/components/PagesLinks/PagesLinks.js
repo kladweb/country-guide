@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useParams } from 'react-router-dom';
-import { LoginMenu } from "../../firebase/LoginMenu";
+import { LoginMenu } from "../LoginMenu/LoginMenu";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../firebase/firebase";
 import { setCurrUser } from "../../redux/loginUsersSlice";
@@ -54,7 +54,7 @@ export const PagesLinks = () => {
           <span className='countFav'>{countFav}</span>
         }
       </NavLink>
-      <NavLink to="/about" className={getLinkClass}>About us</NavLink>
+      <NavLink to="/travelers" className={getLinkClass}>Travelers</NavLink>
       <NavLink to="/login" className={getLinkClass}>
         <LoginMenu/>
       </NavLink>

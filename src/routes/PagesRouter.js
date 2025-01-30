@@ -5,6 +5,7 @@ import { PageCountries } from '../pages/PageCountries';
 import { CountriesList } from '../components/CountriesList/CountriesList';
 import { CountryInfoBar } from '../pages/CountryInfoBar';
 import { PageLoginLogout } from "../pages/PageLoginLogout";
+import { PageTravelers } from "../pages/PageTravelers";
 
 export const PagesRouter = () => {
   return (
@@ -16,6 +17,7 @@ export const PagesRouter = () => {
         </Route>
       </Route>
       <Route path="/about" element={<PageAbout />} />
+      <Route path="/travelers" element={<PageTravelers/>}/>
       <Route path="/login" element={<PageLoginLogout />} />
     </Routes>
   );

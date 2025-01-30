@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setAllowShowVisited } from "../../redux/loginUsersSlice";
 
 export const UserPage = ({logoutGoogle, currUser}) => {
+  const {readAllUsers} = useDatabase();
   const dispatch = useDispatch();
   const {writeUserPermissionVisited, writeUserCountries} = useDatabase();
   const isAllowed = useSelector(state => state.currUser.isAllowShowVisited);
@@ -25,6 +26,7 @@ export const UserPage = ({logoutGoogle, currUser}) => {
   const setAllowVisited = () => {
     writeUserPermissionVisited(!isAllowed);
     dispatch(setAllowShowVisited(!isAllowed));
+    readAllUsers(dispatch);
   }
 
   const deleteUserData = () => {
