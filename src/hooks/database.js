@@ -50,8 +50,7 @@ export const useDatabase = () => {
       const dbRef = ref(database);
       get(child(dbRef, `users/${userId}/allowShowVisited/`)).then((snapshot) => {
         if (snapshot.exists()) {
-          const dataString = snapshot.val();
-          const isAllow = JSON.parse(dataString);
+          const isAllow = snapshot.val();
           dispatch(setAllowShowVisited(isAllow));
         } else {
           console.log("No data available");
