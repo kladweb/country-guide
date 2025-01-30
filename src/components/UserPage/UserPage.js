@@ -48,7 +48,10 @@ export const UserPage = ({logoutGoogle, currUser}) => {
       }
       <h2 className='currentUserName'>{currUser.displayName}</h2>
       <div className="isAllowShowVisited">
-        <input className='shareInput' type='checkbox' checked={isAllowed} onChange={setAllowVisited} />
+        {
+          (isAllowed !== null) &&
+          <input className='shareInput' type='checkbox' defaultChecked={isAllowed} onChange={setAllowVisited}/>
+        }
         <span className='shareDescription'>allow other users to see the countries I have visited (in progress...)</span>
       </div>
       <button className='logoutButton' onClick={openModal}>Logout</button>

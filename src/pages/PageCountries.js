@@ -45,10 +45,10 @@ export const PageCountries = () => {
         {(countries.dataLoadState === 0) &&
           <LoadingStatus loadStatus='no data' />
         }
-        {(countries.dataLoadState === 1 || favCountries.favDataLoadState !== 2) &&
+        {(countries.dataLoadState === 1) &&
           <LoadingStatus loadStatus='loading...' />
         }
-        {(countries.dataLoadState === 2 && favCountries.favDataLoadState === 2) &&
+        {(countries.dataLoadState === 2) &&
           <Countries countries={countries.currentData} page={page} />
         }
         {(countries.dataLoadState === 3) &&

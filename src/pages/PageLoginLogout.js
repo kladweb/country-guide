@@ -15,11 +15,11 @@ export const PageLoginLogout = () => {
   const userName = useSelector(state => state.currUser.userName);
   const provider = new GoogleAuthProvider();
 
-  useEffect(() => {
-    if (currUser) {
-      writeUserPermissionVisited(true);
-    }
-  }, [currUser]);
+  // useEffect(() => {
+  //   if (currUser) {
+  //     writeUserPermissionVisited(true);
+  //   }
+  // }, [currUser]);
 
   useEffect(() => {
     if (currUser && userName === '') {

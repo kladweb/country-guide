@@ -5,7 +5,7 @@ const initialState = {
   userName: null,
   userPhoto: null,
   idCurrUser: null,
-  isAllowShowVisited: true
+  isAllowShowVisited: null
 }
 
 export const loginUserSlice = createSlice({
