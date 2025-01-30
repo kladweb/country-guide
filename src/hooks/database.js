@@ -54,6 +54,7 @@ export const useDatabase = () => {
           dispatch(setAllowShowVisited(isAllow));
         } else {
           console.log("No data available");
+          dispatch(setAllowShowVisited(true));
         }
       }).catch((error) => {
         console.error(error);
