@@ -114,7 +114,8 @@ export const useDatabase = () => {
         // console.log(data);
         const usersCountries = [];
         for (let key in data) {
-          const countries = JSON.parse(data[key]["countries"]);
+          const countries = (data[key]["countries"]) ?
+            JSON.parse(data[key]["countries"]) : [];
           if (data[key]["allowShowVisited"] && countries.length > 0) {
             usersCountries.push(
               {
@@ -126,13 +127,12 @@ export const useDatabase = () => {
             );
           }
         }
-        // console.log(usersCountries);
         dispatch(updateAllUsersCountries(usersCountries));
       } else {
         console.log("No data available");
       }
     }).catch((error) => {
-      // console.error(error);
+      console.error(error);
     });
   }
 
