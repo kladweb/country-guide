@@ -2,6 +2,8 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   currUser: 0,
+  userName: null,
+  userPhoto: null,
   idCurrUser: null,
   isAllowShowVisited: true
 }
@@ -16,6 +18,12 @@ export const loginUserSlice = createSlice({
         state.idCurrUser = action.payload.currUser.uid;
       }
     },
+    setUserName: (state, action) => {
+      state.userName = action.payload;
+    },
+    setUserPhoto: (state, action) => {
+      state.userPhoto = action.payload;
+    },
     setAllowShowVisited: (state, action) => {
       state.isAllowShowVisited = action.payload;
     }
@@ -24,6 +32,8 @@ export const loginUserSlice = createSlice({
 
 export const {
   setCurrUser,
+  setUserName,
+  setUserPhoto,
   setAllowShowVisited
 } = loginUserSlice.actions;
 
