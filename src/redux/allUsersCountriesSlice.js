@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { sortVisitedCountries } from "../utilities/sortingCountries";
 
 const initialState = {
   allCountriesLoadState: 0,
@@ -10,7 +11,7 @@ export const allUsersCountriesSlice = createSlice({
     initialState,
     reducers: {
       updateAllUsersCountries: (state, action) => {
-        state.allCountries = action.payload;
+        state.allCountries = sortVisitedCountries(action.payload);
         state.allCountriesLoadState = 2;
       }
     }

@@ -29,6 +29,19 @@ export const Travelers = () => {
       }
     }, []);
 
+  // useEffect(
+  //   () => {
+  //     allUsersCountries.sort((a, b) => {
+  //       console.log(a);
+  //       if (a.countries.length < b.countries.length) {
+  //         return -1;
+  //       } else if (a.countries.length > b.countries.length) {
+  //         return 1;
+  //       }
+  //       return 0;
+  //     })
+  //   }, [allUsersCountries]);
+
   return (
     <>
       <h2 className='travellers-title'>TRAVELERS</h2>

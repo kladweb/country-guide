@@ -55,6 +55,7 @@ export const useDatabase = () => {
         } else {
           console.log("No data available");
           dispatch(setAllowShowVisited(true));
+          writeUserPermissionVisited(true);
         }
       }).catch((error) => {
         console.error(error);
