@@ -27,3 +27,16 @@ export function sortingCountries(e, dataListCountries) {
   }
   return newData;
 }
+
+export function sortVisitedCountries(countries) {
+  const sortedCountries = [...countries];
+  sortedCountries.sort((a, b) => {
+    if (a.countries.length < b.countries.length) {
+      return 1;
+    } else if (a.countries.length > b.countries.length) {
+      return -1;
+    }
+    return 0;
+  });
+  return sortedCountries;
+}

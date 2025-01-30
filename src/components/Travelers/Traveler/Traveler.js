@@ -1,6 +1,7 @@
 import { Avatar } from "../../Avatar/Avatar";
 
 export const Traveler = ({userName, userUrl, countries}) => {
+
   const countriesList = countries.map((country, index) => (
     <div key={country.code} className="traveler-country">
       <img
