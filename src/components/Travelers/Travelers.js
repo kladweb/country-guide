@@ -9,7 +9,6 @@ export const Travelers = () => {
   const countries = useSelector(state => state.countries);
   const allUsersCountries = useSelector(state => state.allUsersCountries.allCountries);
   const countriesObj = useSelector(state => state.countries);
-  console.log(countriesObj.data);
 
   const getCountriesCodesNames = (countriesCodes) => {
     const countriesCodesNames = [];
