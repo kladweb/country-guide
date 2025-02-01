@@ -1,4 +1,4 @@
-import { NavLink, Outlet, useNavigate, useParams } from 'react-router-dom';
+import { NavLink, Outlet, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { updateData } from "../../redux/countriesSlice";
 import { sortingCountries } from "../../utilities/sortingCountries";

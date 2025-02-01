@@ -51,5 +51,5 @@ const Country = ({code, name, isFav, deleteFavCountry, toggleFav, openInfo}) => 
   );
 };
 
-// export default React.memo(Country);
-export default Country;
+export default React.memo(Country);
+// export default Country;
