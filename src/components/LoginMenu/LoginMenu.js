@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useDatabase } from "../../hooks/database";
 import './loginMenu.css';
@@ -9,10 +9,7 @@ export const LoginMenu = () => {
   const {readUserCountries, readUserPermissionVisited, readUserName, readUserPhoto} = useDatabase();
   const currUser = useSelector(state => state.currUser.currUser);
   const userName = useSelector(state => state.userName);
-  const srcAvatar = (currUser) ? currUser.photoURL : null;
-  // const currUserName = (currUser) ? currUser.displayName : null;
   const currUserName = (currUser) ? (userName ? userName : currUser.displayName) : null;
-  const [showMod, setShowMod] = useState(false);
 
   useEffect(
     () => {
@@ -23,10 +20,6 @@ export const LoginMenu = () => {
         readUserPhoto(dispatch);
       }
     }, [currUser]);
-
-  const changeLogoutOpen = () => {
-    setShowMod(true);
-  }
 
   return (
     <>

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink, useParams } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { LoginMenu } from "../LoginMenu/LoginMenu";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../firebase/firebase";

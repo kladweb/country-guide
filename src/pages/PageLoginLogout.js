@@ -10,16 +10,10 @@ import { useDatabase } from "../hooks/database";
 
 export const PageLoginLogout = () => {
   const dispatch = useDispatch();
-  const {writeUserPermissionVisited, writeUserName, writeUserPhoto} = useDatabase();
+  const {writeUserName, writeUserPhoto} = useDatabase();
   const currUser = useSelector(state => state.currUser.currUser);
   const userName = useSelector(state => state.currUser.userName);
   const provider = new GoogleAuthProvider();
-
-  // useEffect(() => {
-  //   if (currUser) {
-  //     writeUserPermissionVisited(true);
-  //   }
-  // }, [currUser]);
 
   useEffect(() => {
     if (currUser && userName === '') {
