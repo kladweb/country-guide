@@ -1,0 +1,21 @@
+import React from "react";
+import './avatar.css';
+
+export interface IAvatarProps {
+  userUrl: string,
+  userName: string,
+  size: number,
+}
+
+export const Avatar: React.FC<IAvatarProps> = ({userUrl, userName, size}) => {
+  return (
+    <div className='menuAvatar'>
+      <img
+        className='imageAvatar'
+        src={userUrl}
+        alt={userName}
+        // style={{width: `${size * 40}px`}}
+      />
+    </div>
+  );
+}
