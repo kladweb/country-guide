@@ -1,10 +1,8 @@
-import React from "react";
 import { updateLoadState, updateData, updateCurrentData } from './countriesSlice';
-// import type { IUpdateLoadState, IUpdateData, IUpdateCurrentData } from './countriesSlice';
+import { AppDispatch } from "./store";
 
-// type ActionType = IUpdateLoadState | IUpdateData | IUpdateCurrentData;
 
-export async function countriesLoad(dispatch: React.Dispatch<any>) {
+export async function countriesLoad(dispatch: AppDispatch) {
 
   try {
     dispatch(updateLoadState({state: 1, error: null}));

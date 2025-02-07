@@ -5,7 +5,6 @@ import { updateData } from "../../redux/countriesSlice";
 import { sortingCountries } from "../../utilities/sortingCountries";
 import { ScrollUp } from "../ScrollUp/ScrollUp";
 import './Countries.css';
-import { ICountries } from "../../types/globalTypes";
 
 export const Countries = () => {
   const params = useParams();
@@ -26,7 +25,7 @@ export const Countries = () => {
     return navPages;
   }
 
-  function sortCountries(e: any) {
+  function sortCountries(e: React.ChangeEvent<HTMLSelectElement>) {
     if (dataCountries) {
       let newData = sortingCountries(e.target.value, dataCountries);
       dispatch(updateData(newData));

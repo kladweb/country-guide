@@ -15,11 +15,3 @@ export interface ICurrUser {
 interface ICurrUserObj {
   currUser: ICurrUser;
 }
-
-export interface RootStateCustom {
-  countries: string[];
-  favCountries: string[];
-  currUser: ICurrUserObj;
-  openInfoBar: boolean;
-  allUsersCountries: any;
-}
