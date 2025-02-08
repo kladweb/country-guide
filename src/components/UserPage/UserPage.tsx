@@ -20,8 +20,9 @@ export const UserPage: React.FC<IUserPageProps> = ({logoutGoogle, currUser}) => 
   const [isShowMod, setShowMod] = useState(false);
   const [isClearData, setClearData] = useState(false);
 
-  const openModal = (e: any) => {
-    if (e.target.name === 'clear') {
+  const openModal = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const userTarget = e.target as HTMLButtonElement;
+    if (userTarget.name === 'clear') {
       setClearData(true);
     } else {
       setClearData(false);

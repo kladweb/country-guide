@@ -34,7 +34,7 @@ export const PageCountries = () => {
     }, []);
 
   useEffect(() => {
-    if (countries.dataLoadState === 2) {
+    if (countries.data && countries.dataLoadState === 2) {
       dispatch(updateCurrentData({page: page, data: countries.data}));
     }
   }, [page, countries.data, favCountries.data]);
