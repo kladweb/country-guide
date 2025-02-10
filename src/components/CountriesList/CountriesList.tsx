@@ -1,11 +1,11 @@
+import React, { useState } from "react";
 import { Outlet, useNavigate, useParams } from 'react-router-dom';
-import Country from '../Country/Country';
+import Country from './Country';
 import { setOpenInfoBar } from "../../redux/isOpenInfoBarSlice";
 import { updateFavData } from "../../redux/favCountriesSlice";
-import { useDatabase } from "../../hooks/database";
 import { RootState, useAppDispatch, useAppSelector } from "../../redux/store";
+import { useDatabase } from "../../hooks/database";
 import type { ICountries } from "../../types/globalTypes";
-import React from "react";
 
 export const CountriesList = () => {
   const navigate = useNavigate();

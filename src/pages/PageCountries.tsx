@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { updateCurrentData } from '../redux/countriesSlice';
 import { countriesLoad } from '../redux/countriesLoad';
-import { Countries } from '../components/Countries/Countries';
+import { CountriesBasis } from '../components/CountriesBasis/CountriesBasis';
 import { LoadingStatus } from '../components/LoadingStatus/LoadingStatus';
 import { useAppDispatch, useAppSelector } from "../redux/store";
 
@@ -16,7 +16,7 @@ export const PageCountries = () => {
 
   /**
    in this project, the "countries" page does not exist, so we immediately go to the "countries/all" page. It would be
-   possible to make just "countries" instead of "countries/all", but in this case the "Countries" menu button
+   possible to make just "countries" instead of "countries/all", but in this case the "CountriesBasis" menu button
    ceases to be active when navigating inside this page to any other sub-page.
    */
   useEffect(
@@ -49,7 +49,7 @@ export const PageCountries = () => {
           <LoadingStatus loadStatus='loading...'/>
         }
         {(countries.dataLoadState === 2) &&
-          <Countries/>
+          <CountriesBasis/>
         }
         {(countries.dataLoadState === 3) &&
           <LoadingStatus loadStatus={'error ' + countries.dataLoadError}/>

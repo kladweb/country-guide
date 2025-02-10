@@ -1,10 +1,10 @@
-import { useAppDispatch, useAppSelector } from "../../redux/store";
-import './travelers.css';
-import { Traveler } from "./Traveler/Traveler";
 import { useEffect } from "react";
+import { Traveler } from "./Traveler/Traveler";
+import { useAppDispatch, useAppSelector } from "../../redux/store";
 import { countriesLoad } from "../../redux/countriesLoad";
-import { ICountries } from "../../types/globalTypes";
-import { IAllUserCountries } from "../../redux/allUsersCountriesSlice";
+import type { IAllUserCountries } from "../../redux/allUsersCountriesSlice";
+import type { ICountries } from "../../types/globalTypes";
+import './travelers.css';
 
 export interface ICountriesCodesNames {
   code: string,
@@ -37,19 +37,6 @@ export const Travelers = () => {
       }
     }, []);
 
-  // useEffect(
-  //   () => {
-  //     allUsersCountries.sort((a, b) => {
-  //       console.log(a);
-  //       if (a.countries.length < b.countries.length) {
-  //         return -1;
-  //       } else if (a.countries.length > b.countries.length) {
-  //         return 1;
-  //       }
-  //       return 0;
-  //     })
-  //   }, [allUsersCountries]);
-
   return (
     <>
       <h2 className='travellers-title'>TRAVELERS</h2>
@@ -58,14 +45,13 @@ export const Travelers = () => {
           (countries.dataLoadState === 2) &&
           <>
             {
-              allUsersCountries.map((traveler: IAllUserCountries, index: number) => (
+              allUsersCountries.map((traveler: IAllUserCountries) => (
                 <Traveler
                   key={traveler.userId}
                   userName={traveler.userName}
                   userUrl={traveler.userPhoto}
                   countries={getCountriesCodesNames(traveler.countries)}
-                />)
-              )
+                />))
             }
           </>
         }

@@ -1,12 +1,12 @@
 import React from "react";
-import { RootState, useAppDispatch, useAppSelector } from "../../redux/store";
 import { NavLink, Outlet, useParams } from 'react-router-dom';
+import { RootState, useAppDispatch, useAppSelector } from "../../redux/store";
 import { updateData } from "../../redux/countriesSlice";
-import { sortingCountries } from "../../utilities/sortingCountries";
 import { ScrollUp } from "../ScrollUp/ScrollUp";
-import './Countries.css';
+import { sortingCountries } from "../../utilities/sortingCountries";
+import './CountriesBasis.css';
 
-export const Countries = () => {
+export const CountriesBasis = () => {
   const params = useParams();
   const dispatch = useAppDispatch();
   const part = params.part;
@@ -55,15 +55,13 @@ export const Countries = () => {
       </div>
       {
         (part !== 'visited') &&
-        <>
-          <div className='navPages'>
-            <span className='navPages-items navPages-name'>PAGES: </span>
-            <NavLink to={`/countries/all`} className={getLinkClass} key={countPages + 1}>
-              <span className='navPages-items'>ALL</span>
-            </NavLink>
-            {navPagesCode()}
-          </div>
-        </>
+        <div className='navPages'>
+          <span className='navPages-items navPages-name'>PAGES: </span>
+          <NavLink to={`/countries/all`} className={getLinkClass} key={countPages + 1}>
+            <span className='navPages-items'>ALL</span>
+          </NavLink>
+          {navPagesCode()}
+        </div>
       }
       <Outlet/>
     </>

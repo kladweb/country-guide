@@ -1,0 +1,156 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.CountryList {
+  min-height: calc(100vh - 4.75rem);
+  background-image: linear-gradient(rgba(144, 91, 75, 0.75), rgba(144, 91, 75, 0.75)), url(../../../public/img/background/background_01.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.CountryListName {
+  font-weight: bold;
+}
+
+.CountriesGroup {
+  width: auto;
+  padding: 2rem 0 7rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.loading {
+  position: relative;
+  top: -5rem;
+  height: calc(100vh - 4.75rem);
+}
+
+.loading-status {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3rem;
+  color: #afb8b8;
+}
+
+.navPages {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #eaeaea;
+}
+
+.navPages-name {
+  margin: 0.75rem 0 0.25rem;
+  padding: 0;
+}
+
+.navPages-links {
+  display: block;
+  min-width: 1.5rem;
+  margin: 0.5rem;
+  padding: 0.2rem 0.5rem;
+  text-decoration: none;
+  color: #eaeaea;
+  background: rgba(175, 184, 184, 0.24);
+  text-align: center;
+  border: solid 1px #939999;
+  border-radius: 10px;
+}
+
+.navPages .active {
+  border: solid 2px #61ff10;
+}
+
+.typeSorting {
+  margin: 0 auto;
+  padding-top: 1rem;
+  text-align: center;
+  color: #eaeaea;
+}
+
+.typeSorting-name {
+  display: inline-block;
+  padding: 0 1rem;
+}
+
+.typeSorting select {
+  margin: 0;
+  padding: 0;
+  width: fit-content;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  font-size: 1rem;
+  text-decoration: none;
+  color: #eaeaea;
+  background: none;
+  border: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+.typeSorting option {
+  margin: 0;
+  padding: 0;
+  /*text-decoration: none;*/
+  font-size: 1rem;
+  color: #FFF;
+  background: #939999;
+}
+
+.typeSorting select:focus,
+.typeSorting option:focus,
+.typeSorting select:active,
+.typeSorting option:active,
+.typeSorting select:target,
+.typeSorting option:target {
+  border: none;
+  outline: none;
+  background: none;
+}
+
+@media (max-width: 1080px) {
+  .CountriesGroup {
+    padding: 2rem 0 4rem 0;
+  }
+
+  .navPages {
+    padding-top: 2rem;
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 775px) {
+  .CountriesGroup {
+    padding: 2rem 0 7rem 0;
+  }
+}
+
+@media (max-width: 600px) and (orientation: portrait) {
+  .navPages {
+    padding-top: 2rem;
+    font-size: 0.75rem;
+  }
+
+  .navPages-links {
+    min-width: .75rem;
+    margin: 0.5rem 0.5rem;
+    border-radius: 7px;
+  }
+}
+
+@media (max-width: 360px) and (orientation: portrait) {
+  .CountriesGroup {
+    padding: 2rem 0 8rem 0;
+  }
+}

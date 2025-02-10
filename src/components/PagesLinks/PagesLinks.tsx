@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from "../../redux/store";
-import { LoginMenu } from "../LoginMenu/LoginMenu";
 import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "../../firebase/firebase";
+import { LoginMenu } from "../LoginMenu/LoginMenu";
+import { useAppDispatch, useAppSelector } from "../../redux/store";
 import { setCurrUser } from "../../redux/loginUsersSlice";
+import { auth } from "../../firebase/firebase";
 import './PagesLinks.css';
 
 interface IClassObj {
@@ -32,10 +32,6 @@ export const PagesLinks = () => {
           photoURL: getUser.photoURL,
           uid: getUser.uid,
         };
-        // user.email = getUser.email;
-        // user.displayName = getUser.displayName;
-        // user.photoURL = getUser.photoURL;
-        // user.uid = getUser.uid;
         dispatch(setCurrUser({currUser: user}));
       } else {
         dispatch(setCurrUser({currUser: null}));
@@ -61,9 +57,7 @@ export const PagesLinks = () => {
       <NavLink to="/countries" className={(obj) => getLinkClass(obj, 'all')}>Countries</NavLink>
       <NavLink to="/countries/visited" className={getLinkClass}>
         Visited
-        {(countFav > 0) &&
-          <span className='countFav'>{countFav}</span>
-        }
+        {(countFav > 0) && <span className='countFav'>{countFav}</span>}
       </NavLink>
       <NavLink to="/travelers" className={getLinkClass}>Travelers</NavLink>
       <NavLink to="/login" className={getLinkClass}>

@@ -8,6 +8,7 @@ interface IModalLogoutProps {
   isClearData: boolean;
   deleteUserData: () => void;
 }
+
 export const ModalLogout: React.FC<IModalLogoutProps> = ({setShowMod, logoutGoogle, isClearData, deleteUserData}) => {
   const nodeRef = React.useRef(null);
   const [closeMod, setCloseMod] = useState(true);
@@ -53,8 +54,7 @@ export const ModalLogout: React.FC<IModalLogoutProps> = ({setShowMod, logoutGoog
           <span className='button-close material-icons-outlined' onClick={onCloseMod}>close</span>
           {
             (isClearData) ?
-              <div className='modal-question'>Do yo want to logout<br />and clear all data?</div>
-              :
+              <div className='modal-question'>Do yo want to logout<br/>and clear all data?</div> :
               <div className='modal-question'>Do yo want to logout?</div>
           }
           <button onClick={onLogout}>YES</button>

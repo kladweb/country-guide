@@ -81,5 +81,5 @@ const Country: React.FC<ICountryProps> = ({code, name, isFav, deleteFavCountry, 
   );
 };
 
-export default React.memo(Country);
-// export default Country;
+// export default React.memo(Country);
+export default Country;
