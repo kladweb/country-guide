@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { useAppDispatch, useAppSelector } from "../../redux/store";
 import { ModalLogout } from "../ModalLogout/ModalLogout";
 import { useDatabase } from "../../hooks/database";
+import { useAppDispatch, useAppSelector } from "../../redux/store";
 import { setAllowShowVisited } from "../../redux/loginUsersSlice";
+import type { ICurrUser } from "../../types/globalTypes";
 import './userPage.css';
-import { ICurrUser } from "../../types/globalTypes";
 
 interface IUserPageProps {
   logoutGoogle: () => void;
@@ -59,7 +59,7 @@ export const UserPage: React.FC<IUserPageProps> = ({logoutGoogle, currUser}) => 
           (isAllowed !== null) &&
           <input className='shareInput' type='checkbox' defaultChecked={isAllowed} onChange={setAllowVisited}/>
         }
-        <span className='shareDescription'>allow other users to see the countries I have visited (in progress...)</span>
+        <span className='shareDescription'>allow other users to see the countries I have visited.</span>
       </div>
       <button className='logoutButton' onClick={openModal}>Logout</button>
       <button className='logoutButton logoutClear' name="clear" onClick={openModal}>Logout and clear data</button>

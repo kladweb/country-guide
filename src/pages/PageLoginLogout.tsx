@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import { GoogleAuthProvider, signInWithPopup, signOut, deleteUser } from "firebase/auth";
 import { auth } from "../firebase/firebase";
+import { useAppDispatch, useAppSelector } from "../redux/store";
 import { setCurrUser, setUserName, setUserPhoto } from "../redux/loginUsersSlice";
 import { updateFavData } from "../redux/favCountriesSlice";
 import { Login } from "../components/Login/Login";
 import { UserPage } from "../components/UserPage/UserPage";
 import { useDatabase } from "../hooks/database";
-import { useAppDispatch, useAppSelector } from "../redux/store";
 import firebase from "firebase/compat/app";
 import User = firebase.User;
 import type { ICurrUser } from "../types/globalTypes";
@@ -76,7 +76,7 @@ export const PageLoginLogout = () => {
         dispatch(updateFavData([]));
         // User deleted.
       }).catch((error) => {
-        // An error ocurred
+        // An error occurred
         // ...
       });
     }

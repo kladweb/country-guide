@@ -4,14 +4,12 @@ import './CountryInfo.css';
 import { ICountries } from "../../types/globalTypes";
 import { useAppSelector } from "../../redux/store";
 
-
-
 export const CountryInfo: React.FC<ICountries> = ({code, name, population, area}) => {
   const params = useParams();
   const page = params.part;
   const navigate = useNavigate();
   const isOpenInfoBar = useAppSelector(state => state.openInfoBar.isOpenInfoBar);
-  //делаем отступы между тысячными:
+  //make indents between thousandths:
   const people = population.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1 ');
   const square = area.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1 ');
 
@@ -24,7 +22,6 @@ export const CountryInfo: React.FC<ICountries> = ({code, name, population, area}
     }, 450);
   }
 
-  // console.log(isOpenInfoBar);
   useEffect(() => {
     if (isOpenInfoBar === 'close') {
       closeInfo();

@@ -1,6 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import type { ICountries } from "../types/globalTypes";
-import { IAllUserCountries } from "./allUsersCountriesSlice";
 
 export interface IStateCountries {
   dataLoadState: 0 | 1 | 2 | 3;

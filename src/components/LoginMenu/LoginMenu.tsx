@@ -29,8 +29,7 @@ export const LoginMenu = () => {
           userUrl={currUser.photoURL}
           userName={currUserName}
           size={1}
-        />
-        :
+        /> :
         <div className='loginMenu'>Login</div>
       }
     </>
