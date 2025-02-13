@@ -4,7 +4,7 @@ import { RootState, useAppDispatch, useAppSelector } from "../../redux/store";
 import { updateData } from "../../redux/countriesSlice";
 import { ScrollUp } from "../ScrollUp/ScrollUp";
 import { sortingCountries } from "../../utilities/sortingCountries";
-import './CountriesBasis.css';
+import './CountriesBasis.scss';
 
 export const CountriesBasis = () => {
   const params = useParams();
