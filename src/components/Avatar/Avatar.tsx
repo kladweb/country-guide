@@ -1,5 +1,5 @@
 import React from 'react';
-import './avatar.css';
+import './avatar.scss';
 
 export interface IAvatarProps {
   userUrl: string,
