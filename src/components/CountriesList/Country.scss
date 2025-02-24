@@ -97,11 +97,11 @@
   height: 6rem;
   object-fit: contain;
   transition: transform 0.3s ease-in-out;
-}
 
-.flag-preview:hover {
-  transform: scale(1.07);
-  transition: transform 0.5s ease-out;
+  &:hover {
+    transform: scale(1.07);
+    transition: transform 0.5s ease-out;
+  }
 }
 
 .isFav {
