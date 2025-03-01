@@ -1,4 +1,4 @@
-import './CountryAbout.css';
+import './CountryAbout.scss';
 
 export const CountryAbout = () => {
 
