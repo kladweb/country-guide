@@ -46,20 +46,20 @@
   align-items: center;
 }
 
-.country-info h2,
-.country-info h3 {
-  font-weight: 400;
-}
+.country-info {
+  h2, h3 {
+    font-weight: 400;
+  }
+  h3 {
+    padding-left: 20%;
+    font-weight: 400;
+  }
 
-.country-info h3 {
-  padding-left: 20%;
-  font-weight: 400;
-}
-
-.country-info .country-info__name {
-  padding-bottom: 0.5rem;
-  font-size: 2rem;
-  text-align: center;
+  .country-info__name {
+    padding-bottom: 0.5rem;
+    font-size: 2rem;
+    text-align: center;
+  }
 }
 
 .country-info__properties {
