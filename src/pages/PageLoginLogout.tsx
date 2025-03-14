@@ -88,7 +88,7 @@ export const PageLoginLogout = () => {
         {(currUser) ?
           <UserPage
             logoutGoogle={logoutGoogle}
-            currUser={currUser}
+            userName={userName}
           />
           :
           <Login loginGoogle={loginGoogle}/>

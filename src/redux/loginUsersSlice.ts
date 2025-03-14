@@ -3,7 +3,7 @@ import { ICurrUser } from "../types/globalTypes";
 
 interface IStateLoginUsers {
   currUser: ICurrUser | null;
-  userName: string | null;
+  userName: string;
   userPhoto: string | null;
   idCurrUser: string | null;
   isAllowShowVisited: boolean | null;
@@ -11,7 +11,7 @@ interface IStateLoginUsers {
 
 const initialState: IStateLoginUsers = {
   currUser: null,
-  userName: null,
+  userName: "",
   userPhoto: null,
   idCurrUser: null,
   isAllowShowVisited: null

@@ -3,15 +3,15 @@ import { ModalLogout } from "../ModalLogout/ModalLogout";
 import { useDatabase } from "../../hooks/database";
 import { useAppDispatch, useAppSelector } from "../../redux/store";
 import { setAllowShowVisited } from "../../redux/loginUsersSlice";
-import type { ICurrUser } from "../../types/globalTypes";
+import { InputName } from "../InputName/InputName";
 import './userPage.css';
 
 interface IUserPageProps {
   logoutGoogle: () => void;
-  currUser: ICurrUser;
+  userName: string;
 }
 
-export const UserPage: React.FC<IUserPageProps> = ({logoutGoogle, currUser}) => {
+export const UserPage: React.FC<IUserPageProps> = ({logoutGoogle, userName}) => {
   const {readAllUsers} = useDatabase();
   const dispatch = useAppDispatch();
   const {writeUserPermissionVisited, writeUserCountries} = useDatabase();
@@ -19,6 +19,7 @@ export const UserPage: React.FC<IUserPageProps> = ({logoutGoogle, currUser}) => 
 
   const [isShowMod, setShowMod] = useState(false);
   const [isClearData, setClearData] = useState(false);
+  const [isInput, setInput] = useState(false);
 
   const openModal = (e: React.MouseEvent<HTMLButtonElement>) => {
     const userTarget = e.target as HTMLButtonElement;
@@ -53,7 +54,20 @@ export const UserPage: React.FC<IUserPageProps> = ({logoutGoogle, currUser}) => 
           deleteUserData={deleteUserData}
         />
       }
-      <h2 className='currentUserName'>{currUser.displayName}</h2>
+      <div className='userNameWrapper'>
+        {
+          (isInput) ?
+            <InputName userName={userName} setInput={setInput}/> :
+            <h2
+              className='currentUserName'
+              onDoubleClick={() => {
+                setInput(true)
+              }}
+            >
+              {userName}
+            </h2>
+        }
+      </div>
       <div className="isAllowShowVisited">
         {
           (isAllowed !== null) &&
