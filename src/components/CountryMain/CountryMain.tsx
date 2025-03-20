@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import './CountryMain.css';
+import './CountryMain.scss';
 
 export const CountryMain = () => {
 
