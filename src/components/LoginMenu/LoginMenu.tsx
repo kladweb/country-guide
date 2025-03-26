@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../redux/store";
 import { useDatabase } from "../../hooks/database";
 import { Avatar } from "../Avatar/Avatar";
-import './loginMenu.css';
+import './loginMenu.scss';
 import { ICurrUser } from "../../types/globalTypes";
 
 export const LoginMenu = () => {

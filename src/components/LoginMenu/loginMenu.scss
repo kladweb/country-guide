@@ -5,10 +5,10 @@
   text-decoration: none;
   cursor: pointer;
   transition: color .5s;
-}
 
-.loginMenu:hover {
-  color: #f30e29;
+  &:hover {
+    color: #f30e29;
+  }
 }
 
 .logoutMenu {
