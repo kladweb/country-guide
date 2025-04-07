@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { Traveler } from "./Traveler/Traveler";
 import { useAppDispatch, useAppSelector } from "../../redux/store";
-import { countriesLoad } from "../../redux/countriesLoad";
 import type { IAllUserCountries } from "../../redux/allUsersCountriesSlice";
 import type { ICountries } from "../../types/globalTypes";
 import './travelers.css';
+import { useDatabase } from "../../hooks/database";
 
 export interface ICountriesCodesNames {
   code: string,
@@ -13,6 +13,7 @@ export interface ICountriesCodesNames {
 
 export const Travelers = () => {
   const dispatch = useAppDispatch();
+  const {readAllCountries} = useDatabase();
   const countries = useAppSelector(state => state.countries);
   const allUsersCountries = useAppSelector(state => state.allUsersCountries.allCountries);
 
@@ -33,7 +34,8 @@ export const Travelers = () => {
   useEffect(
     () => {
       if (countries.dataLoadState !== 2) {
-        dispatch(countriesLoad);
+        readAllCountries(dispatch);
+        // dispatch(countriesLoad);
       }
     }, []);
 

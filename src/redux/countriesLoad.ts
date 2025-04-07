@@ -1,7 +1,6 @@
 import { updateLoadState, updateData, updateCurrentData } from './countriesSlice';
 import { AppDispatch } from "./store";
 
-
 export async function countriesLoad(dispatch: AppDispatch) {
 
   try {

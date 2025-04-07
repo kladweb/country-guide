@@ -1,14 +1,15 @@
 import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { updateCurrentData } from '../redux/countriesSlice';
-import { countriesLoad } from '../redux/countriesLoad';
 import { CountriesBasis } from '../components/CountriesBasis/CountriesBasis';
 import { LoadingStatus } from '../components/LoadingStatus/LoadingStatus';
 import { useAppDispatch, useAppSelector } from "../redux/store";
+import { useDatabase } from "../hooks/database";
 
 export const PageCountries = () => {
   const params = useParams();
   const navigate = useNavigate();
+  const {readAllCountries} = useDatabase();
   const page = params.part;
   const dispatch = useAppDispatch();
   const countries = useAppSelector(state => state.countries);
@@ -28,8 +29,10 @@ export const PageCountries = () => {
 
   useEffect(
     () => {
+      // countriesLoad(dispatch);
       if (countries.dataLoadState !== 2) {
-        dispatch(countriesLoad);
+        readAllCountries(dispatch);
+        // dispatch(countriesLoad);
       }
     }, []);
 

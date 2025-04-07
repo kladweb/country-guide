@@ -5,6 +5,7 @@ import { updateFavData } from "../redux/favCountriesSlice";
 import { setAllowShowVisited, setUserName, setUserPhoto } from "../redux/loginUsersSlice";
 import { IAllUserCountries, updateAllUsersCountries } from "../redux/allUsersCountriesSlice";
 import { AppDispatch, RootState } from "../redux/store";
+import { updateCurrentData, updateData, updateLoadState } from "../redux/countriesSlice";
 
 
 export const useDatabase = () => {
@@ -17,6 +18,25 @@ export const useDatabase = () => {
     } else {
       console.log('No auth !');
     }
+  }
+
+  function readAllCountries(dispatch: AppDispatch) {
+    dispatch(updateLoadState({state: 1, error: null}));
+    const dbRef = ref(database);
+    get(child(dbRef, 'countries')).then((snapshot) => {
+      if (snapshot.exists()) {
+        const data = snapshot.val();
+        dispatch(updateLoadState({state: 2, error: null}));
+        dispatch(updateData(data));
+        dispatch(updateCurrentData({data: data}));
+      } else {
+        console.log("No data available");
+        dispatch(updateLoadState({state: 3, error: 'No data available'}));
+      }
+    }).catch((error) => {
+      dispatch(updateLoadState({state: 3, error: 'HTTP error ' + error}));
+      console.error(error);
+    });
   }
 
   function readUserCountries(dispatch: AppDispatch) {
@@ -140,6 +160,7 @@ export const useDatabase = () => {
   }
 
   return {
+    readAllCountries,
     writeUserCountries,
     readUserCountries,
     writeUserPermissionVisited,
