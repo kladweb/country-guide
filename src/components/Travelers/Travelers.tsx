@@ -37,6 +37,7 @@ export const Travelers = () => {
         readAllCountries(dispatch);
         // dispatch(countriesLoad);
       }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
   return (

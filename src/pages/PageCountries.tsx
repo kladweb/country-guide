@@ -25,6 +25,7 @@ export const PageCountries = () => {
       if (!page) {
         navigate('/countries/all');
       }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [page]);
 
   useEffect(
@@ -34,12 +35,14 @@ export const PageCountries = () => {
         readAllCountries(dispatch);
         // dispatch(countriesLoad);
       }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
   useEffect(() => {
     if (countries.data && countries.dataLoadState === 2) {
       dispatch(updateCurrentData({page: page, data: countries.data}));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page, countries.data, favCountries.data]);
 
   return (

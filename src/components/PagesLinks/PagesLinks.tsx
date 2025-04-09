@@ -21,6 +21,7 @@ export const PagesLinks = () => {
   useEffect(
     () => {
       initUser();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
   function initUser() {

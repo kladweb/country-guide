@@ -27,13 +27,14 @@ export const PageLoginLogout = () => {
       writeUserPhoto(currUser.photoURL);
       dispatch(setUserPhoto(currUser.photoURL));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userName]);
 
   const loginGoogle = function () {
     signInWithPopup(auth, provider)
       .then((result) => {
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential?.accessToken;
+        // const credential = GoogleAuthProvider.credentialFromResult(result);
+        // const token = credential?.accessToken;
         const getUser = auth.currentUser as User;
         const user: ICurrUser = {
           email: (getUser.email) ? getUser.email : '',
@@ -49,10 +50,10 @@ export const PageLoginLogout = () => {
         return user.uid;
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        const email = error.customData.email;
-        const credential = GoogleAuthProvider.credentialFromError(error);
+        // const errorCode = error.code;
+        // const errorMessage = error.message;
+        // const email = error.customData.email;
+        // const credential = GoogleAuthProvider.credentialFromError(error);
         console.log(error);
         dispatch(updateFavData([]));
       });
@@ -68,19 +69,19 @@ export const PageLoginLogout = () => {
     });
   }
 
-  const deleteUserFromApp = function () {
-    const user = auth.currentUser;
-    if (user) {
-      deleteUser(user).then(() => {
-        dispatch(setCurrUser({currUser: auth.currentUser}));
-        dispatch(updateFavData([]));
-        // User deleted.
-      }).catch((error) => {
-        // An error occurred
-        // ...
-      });
-    }
-  }
+  // const deleteUserFromApp = function () {
+  //   const user = auth.currentUser;
+  //   if (user) {
+  //     deleteUser(user).then(() => {
+  //       dispatch(setCurrUser({currUser: auth.currentUser}));
+  //       dispatch(updateFavData([]));
+  //       // User deleted.
+  //     }).catch((error) => {
+  //       // An error occurred
+  //       // ...
+  //     });
+  //   }
+  // }
 
   return (
     <div className='CountryAbout'>

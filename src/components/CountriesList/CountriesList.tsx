@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Outlet, useNavigate, useParams } from 'react-router-dom';
 import Country from './Country';
 import { setOpenInfoBar } from "../../redux/isOpenInfoBarSlice";
