@@ -29,6 +29,7 @@ export const ScrollUp = () => {
         document.removeEventListener('scroll', checkScroll);
       };
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [show]
   );
 

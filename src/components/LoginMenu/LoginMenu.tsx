@@ -20,6 +20,7 @@ export const LoginMenu = () => {
         readUserName(dispatch);
         readUserPhoto(dispatch);
       }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [currUser]);
 
   return (

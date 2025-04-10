@@ -15,6 +15,7 @@ export const CountryInfoBar = () => {
         <CountryInfo
           code={countryData.code}
           name={countryData.name}
+          capital={countryData.capital}
           population={countryData.population}
           area={countryData.area}
         />

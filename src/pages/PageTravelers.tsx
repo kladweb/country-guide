@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Travelers } from "../components/Travelers/Travelers";
-import { useAppDispatch, useAppSelector } from "../redux/store";
+import { useAppDispatch } from "../redux/store";
 import { useDatabase } from "../hooks/database";
 
 export const PageTravelers = () => {
@@ -9,6 +9,7 @@ export const PageTravelers = () => {
 
   useEffect(() => {
     readAllUsers(dispatch);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
