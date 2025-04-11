@@ -1,9 +1,9 @@
 <h1 align="center">
   <br>
   <a  
-style="color: rgba(245, 148, 39, 0.8); text-decoration: none"
+style="text-decoration: none; color: #e1840b;"
 href="https://myvisitedcountries.netlify.app/">
-<img src="https://myvisitedcountries.netlify.app/img/shared/logo.png" alt="Markdownify" width="200">
+<img src="https://myvisitedcountries.netlify.app/img/shared/logo.png" alt="Markdownify" width="250">
   <br>
   COUNTRY GUIDE
   <br>
