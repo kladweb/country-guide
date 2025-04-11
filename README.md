@@ -3,7 +3,7 @@
   <a  
 style="text-decoration: none; color: #e1840b;"
 href="https://myvisitedcountries.netlify.app/">
-<img src="https://myvisitedcountries.netlify.app/img/shared/logo.png" alt="Markdownify" width="250">
+<img src="https://myvisitedcountries.netlify.app/img/shared/logo_sm.png" alt="Markdownify" width="250">
   <br>
   COUNTRY GUIDE
   <br>
