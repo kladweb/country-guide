@@ -1,8 +1,8 @@
 <h1 align="center">
   <br>
   <a  
-style="color: #ff8128; text-decoration: none"
-href="http://www.amitmerchant.com/electron-markdownify">
+style="color: rgba(245, 148, 39, 0.8); text-decoration: none"
+href="https://myvisitedcountries.netlify.app/">
 <img src="https://myvisitedcountries.netlify.app/img/shared/logo.png" alt="Markdownify" width="200">
   <br>
   COUNTRY GUIDE
