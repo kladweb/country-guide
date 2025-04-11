@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { GoogleAuthProvider, signInWithPopup, signOut, deleteUser } from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 import { auth } from "../firebase/firebase";
 import { useAppDispatch, useAppSelector } from "../redux/store";
 import { setCurrUser, setUserName, setUserPhoto } from "../redux/loginUsersSlice";
