@@ -5,7 +5,7 @@ import { LoginMenu } from "../LoginMenu/LoginMenu";
 import { useAppDispatch, useAppSelector } from "../../redux/store";
 import { setCurrUser } from "../../redux/loginUsersSlice";
 import { auth } from "../../firebase/firebase";
-import './PagesLinks.css';
+import './PagesLinks.scss';
 
 interface IClassObj {
   isActive: boolean;
