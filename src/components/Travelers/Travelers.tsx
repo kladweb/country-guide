@@ -3,8 +3,8 @@ import { Traveler } from "./Traveler/Traveler";
 import { useAppDispatch, useAppSelector } from "../../redux/store";
 import type { IAllUserCountries } from "../../redux/allUsersCountriesSlice";
 import type { ICountries } from "../../types/globalTypes";
-import './travelers.css';
 import { useDatabase } from "../../hooks/database";
+import './travelers.scss';
 
 export interface ICountriesCodesNames {
   code: string,
