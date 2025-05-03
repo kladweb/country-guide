@@ -4,7 +4,7 @@ import { useDatabase } from "../../hooks/database";
 import { useAppDispatch, useAppSelector } from "../../redux/store";
 import { setAllowShowVisited } from "../../redux/loginUsersSlice";
 import { InputName } from "../InputName/InputName";
-import './userPage.css';
+import './userPage.scss';
 
 interface IUserPageProps {
   logoutGoogle: () => void;
