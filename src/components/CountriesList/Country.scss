@@ -1,3 +1,5 @@
+@import "../../styles/variables.scss";
+
 .land-enter {
   opacity: 0;
 }
@@ -26,7 +28,7 @@
 .country-title {
   display: block;
   font-size: 1.25rem;
-  color: #FFF;
+  color: $white-color;
 }
 
 .country-title__small {
@@ -45,8 +47,8 @@
   margin: 0.5rem 0;
   padding: 0.2rem 0.5rem;
   font-size: 1rem;
-  background: rgba(234, 234, 234, 0.3);
-  border: solid 1px #eaeaea;
+  background: $gray-opacity1;
+  border: solid 1px $primary-color;
   border-radius: 5px;
   color: #7a4d40;
   cursor: pointer;
@@ -54,7 +56,7 @@
 
 .CountryInfo__title:hover,
 .CountryAdd:hover {
-  background: rgba(234, 234, 234, 0.7);
+  background: $gray-opacity2;
   color: #7a4d40;
   transition: .7s;
 }
@@ -66,7 +68,7 @@
 
 .CountryLinks .active .CountryInfo__title {
   background: rgba(234, 234, 234, 0.8);
-  color: #7a4d40;
+  color: $countries-links;
   box-shadow: 0 0 2px #474848 inset;
 
 }
@@ -84,8 +86,8 @@
   display: block;
   margin: 0 auto;
   width: 14rem;
-  background-color: rgba(234, 234, 234, 0.3);
-  border: solid 1px #eaeaea;
+  background-color: $gray-opacity1;
+  border: solid 1px $primary-color;
   border-radius: 10px;
 }
 
@@ -105,7 +107,7 @@
 }
 
 .isFav {
-  border-color: yellow;
+  border-color: $border-color1;
   transition: 0.5s;
 }
 
