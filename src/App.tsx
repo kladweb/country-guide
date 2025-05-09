@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { PagesRouter } from './routes/PagesRouter';
 import { store } from './redux/store';
 import { Header } from './components/Header/Header';
-import './app.scss';
+import './styles/app.scss';
 
 export const App = () => (
   <Provider store={store}>

@@ -1,6 +1,12 @@
+@import "./variables.scss";
+
 * {
   margin: 0;
   padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .content {
@@ -15,8 +21,8 @@
 .main-header {
   position: fixed;
   width: 100%;
-  background-color: #939999;
-  box-shadow: 0 0 1.5rem 0 #afb8b8;
+  background-color: $gray-light;
+  box-shadow: 0 0 1.5rem 0 $secondary-color;
   font-size: 1rem;
   z-index: 50;
 }
@@ -36,7 +42,7 @@
   padding: 0 1rem;
   font-size: 2em;
   font-weight: 600;
-  color: #61ff10;
+  color: $highlight-color;
   vertical-align: middle;
 }
 
@@ -54,7 +60,7 @@ main {
 }
 
 .flags-list {
-  background: #afb8b8;
+  background: $secondary-color;
 }
 
 @media (max-width: 900px) {

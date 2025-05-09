@@ -1,11 +1,6 @@
-html {
-  scroll-behavior: smooth;
-}
+@import "../../styles/variables.scss";
 
-$primary-color: #eaeaea;
-$secondary-color: #afb8b8;
-$highlight-color: #61ff10;
-$background-gradient: linear-gradient(rgba(144, 91, 75, 0.75), rgba(144, 91, 75, 0.75)), url(../../../public/img/background/background_01.jpg);
+$background-gradient: linear-gradient($background-brown, $background-brown), url(../../../public/img/background/background_01.jpg);
 
 .CountryList {
   min-height: calc(100vh - 4.75rem);
@@ -61,9 +56,9 @@ $background-gradient: linear-gradient(rgba(144, 91, 75, 0.75), rgba(144, 91, 75,
     padding: 0.2rem 0.5rem;
     text-decoration: none;
     color: $primary-color;
-    background: rgba(175, 184, 184, 0.24);
+    background: $background-gray;
     text-align: center;
-    border: 1px solid #939999;
+    border: 1px solid $gray-light;
     border-radius: 10px;
   }
 
@@ -95,8 +90,8 @@ $background-gradient: linear-gradient(rgba(144, 91, 75, 0.75), rgba(144, 91, 75,
 
   option {
     font-size: 1rem;
-    color: #fff;
-    background: #939999;
+    color: $white-color;
+    background:$gray-light;
   }
 
   select:focus,
