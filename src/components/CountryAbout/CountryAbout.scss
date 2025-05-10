@@ -1,3 +1,5 @@
+@import "../../styles/variables.scss";
+
 .CountryAbout {
   min-height: calc(100vh - 4.75rem);
 }
@@ -6,8 +8,7 @@
   position: fixed;
   height: 100vh;
   width: 100vw;
-  background-image: linear-gradient(rgba(122, 77, 64, 0.83),
-  rgba(122, 77, 64, 0.84)), url(../../../public/img/background/background_03.jpg);
+  background-image: linear-gradient($background-brown, $background-brown, url(../../../public/img/background/background_03.jpg));
   background-repeat: no-repeat;
   background-position: center center;
   -webkit-background-size: cover;
@@ -21,7 +22,7 @@
   padding-top: 3rem;
   font-size: 3rem;
   font-weight: 400;
-  color: #eaeaea;
+  color: $primary-color;
   text-align: center;
 }
 
@@ -30,17 +31,17 @@
   font-size: 1.75rem;
   text-indent: 3rem;
   line-height: 3rem;
-  color: #eaeaea;
+  color: $primary-color;
   text-align: justify;
 }
 
 .js-project {
   text-decoration: none;
-  color: #eaeaea;
+  color: $primary-color;
 }
 
 .js-project:hover {
-  color: #61ff10;
+  color: $highlight-color;
 }
 
 @media (max-width: 1080px) {
@@ -52,7 +53,7 @@
     margin-top: 1.125rem;
     font-size: 1.5rem;
     line-height: 2rem;
-    color: #eaeaea;
+    color: $secondary-color;
     text-align: justify;
   }
 }
@@ -66,7 +67,7 @@
     margin-top: 1rem;
     font-size: 1.25rem;
     line-height: 1.75rem;
-    color: #eaeaea;
+    color: $secondary-color;
     text-align: justify;
   }
 }
