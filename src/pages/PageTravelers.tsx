@@ -13,8 +13,7 @@ export const PageTravelers = () => {
   }, []);
 
   return (
-    <div className="CountryAbout">
-      <div className="CountryAbout-bg"></div>
+    <div className="travelers">
       <div className="content">
         <Travelers/>
       </div>

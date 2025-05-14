@@ -1,11 +1,23 @@
 @import "../../styles/variables.scss";
 
-$background-gradient: linear-gradient($background-brown, $background-brown), url(../../../public/img/background/background_01.jpg);
+$background-gradient: linear-gradient($background-brown, $background-brown),
+url(../../../public/img/background/background_01.jpg);
 
 .CountryList {
-  min-height: calc(100vh - 4.75rem);
-  background: $background-gradient no-repeat center center fixed;
-  background-size: cover;
+  //min-height: calc(100vh - 4.75rem);
+  //background: $background-gradient no-repeat center center fixed;
+  //background-size: cover;
+
+  &::before {
+    content: '';
+    background: $background-gradient no-repeat center center / cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+  }
 }
 
 .CountryListName {
@@ -91,7 +103,7 @@ $background-gradient: linear-gradient($background-brown, $background-brown), url
   option {
     font-size: 1rem;
     color: $white-color;
-    background:$gray-light;
+    background: $gray-light;
   }
 
   select:focus,
