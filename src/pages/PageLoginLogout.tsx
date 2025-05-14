@@ -84,7 +84,7 @@ export const PageLoginLogout = () => {
   // }
 
   return (
-    <div className='CountryAbout'>
+    <div className='travelers'>
       <div className='content'>
         {(currUser) ?
           <UserPage
