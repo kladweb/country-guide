@@ -3,7 +3,7 @@
 .travelers {
   &::before {
     content: '';
-    background: linear-gradient($background-brown, $background-brown),
+    background: linear-gradient($background-color1, $background-color1),
     url(../../../public/img/background/background_03.jpg) no-repeat center center / cover;
     position: fixed;
     top: 0;
