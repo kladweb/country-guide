@@ -1,6 +1,6 @@
 @import "../../styles/variables.scss";
 
-$background-gradient: linear-gradient($background-brown, $background-brown),
+$background-gradient: linear-gradient($background-color1, $background-color1),
 url(../../../public/img/background/background_01.jpg);
 
 .CountryList {
@@ -68,9 +68,9 @@ url(../../../public/img/background/background_01.jpg);
     padding: 0.2rem 0.5rem;
     text-decoration: none;
     color: $primary-color;
-    background: $background-gray;
+    background: $background-color2;
     text-align: center;
-    border: 1px solid $gray-light;
+    border: 1px solid $color-light;
     border-radius: 10px;
   }
 
@@ -103,7 +103,7 @@ url(../../../public/img/background/background_01.jpg);
   option {
     font-size: 1rem;
     color: $white-color;
-    background: $gray-light;
+    background: $color-light;
   }
 
   select:focus,

@@ -1,13 +1,15 @@
+@import "../../styles/variables.scss";
+
 .country-info {
   width: 100%;
   padding: 0;
   position: fixed;
   left: 0;
   bottom: 0;
-  color: #eaeaea;
-  background: #7a4d40;
-  border-top: solid 5px #939999;
-  border-bottom: solid 5px #939999;
+  color: $primary-color;
+  background: $countries-links;
+  border-top: solid 5px $color-light;
+  border-bottom: solid 5px $color-light;
 }
 
 .show {
