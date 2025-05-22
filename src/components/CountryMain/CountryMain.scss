@@ -1,3 +1,5 @@
+@import "../../styles/variables.scss";
+
 .CountryMain {
   //padding-bottom: 2rem;
   position: relative;
@@ -10,7 +12,7 @@
 
   &::before {
     content: '';
-    background: linear-gradient(rgba(147, 153, 153, 0.5), rgba(147, 153, 153, 0.5)),
+    background: linear-gradient($background-color3, $background-color3),
     url(../../../public/img/background/background_02.jpg) no-repeat center center / cover;
     position: fixed;
     top: 0;
@@ -23,14 +25,14 @@
   h1 {
     padding-top: 2rem;
     font-size: 3rem;
-    color: #61ff10;
+    color: $highlight-color;
     text-align: center;
   }
 
   p {
     font-size: 1.5rem;
     text-indent: 2rem;
-    color: #eaeaea;
+    color: $primary-color;
   }
 }
 
@@ -46,21 +48,21 @@
   margin: 1rem auto;
   padding: 1rem 2rem;
   text-decoration: none;
-  border: solid 5px rgba(234, 234, 234, 0.8);
+  border: solid 5px $color-bg-opacity3;
   border-radius: 16px;
   text-align: center;
-  background-image: linear-gradient(rgba(246, 173, 85, 0.8), rgba(225, 132, 11, 0.8));
+  background-image: linear-gradient($color-button1, $color-button1);
   /*background-image: linear-gradient(#f6ad55, #e1840b);*/
 }
 
 .main-button:hover {
-  background-image: linear-gradient(#f6ad55, #e1840b);
+  background-image: linear-gradient($color-button1, $color-button1);
   border: solid 5px #eaeaea;
 }
 
 .main-button__name {
   font-size: 1.5rem;
-  color: #FFF;
+  color: $main-color;
 }
 
 @media (max-width: 1080px) {
