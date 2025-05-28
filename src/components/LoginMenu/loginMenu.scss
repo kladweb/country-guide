@@ -1,13 +1,15 @@
+@import "../../styles/variables.scss";
+
 .loginMenu {
   display: inline-block;
   font-size: 1.3rem;
-  color: #b1091d;
+  color: $color-menu1;
   text-decoration: none;
   cursor: pointer;
   transition: color .5s;
 
   &:hover {
-    color: #f30e29;
+    color: $color-menu2;
   }
 }
 
