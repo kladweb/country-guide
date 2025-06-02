@@ -1,12 +1,14 @@
+@import "../../styles/variables.scss";
+
 .modal {
   opacity: 0;
   height: 100vh;
   width: 100vw;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: $color-bg-opacity0;
   position: fixed;
   top: 0;
   left: 0;
-  color: #eaeaea;
+  color: $primary-color;
   z-index: 70;
 }
 
@@ -39,13 +41,13 @@
   flex-wrap: wrap;
   width: 30rem;
   height: 10rem;
-  background-color: #7a4d40;
+  background-color: $countries-links;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: 5;
   border-radius: 2rem;
-  border: 5px solid #939999;
+  border: 5px solid $color-light;
 
   button {
     width: 3rem;
@@ -53,15 +55,15 @@
     margin: 0 1rem;
     font-size: 1rem;
     font-weight: 600;
-    color: #b1091d;
+    color: $color-menu1;
     background-color: rgba(234, 234, 234, 0.9);
     border: none;
-    box-shadow: 2px 2px 1px 1px #55362d;
+    box-shadow: 2px 2px 1px 1px $color-button5;
     border-radius: 0.5em;
     cursor: pointer;
 
     &:hover {
-      background-color: #eaeaea;
+      background-color: $primary-color;
     }
 
     &:active {
@@ -82,7 +84,7 @@
 .button-close {
   position: absolute;
   font-family: "Material Icons", fantasy;
-  color: #eaeaea;
+  color: $primary-color;
   right: 0.5rem;
   top: 0.5rem;
   border: solid 1px;

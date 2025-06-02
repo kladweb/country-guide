@@ -48,16 +48,16 @@
   margin: 1rem auto;
   padding: 1rem 2rem;
   text-decoration: none;
-  border: solid 5px $color-bg-opacity3;
+  border: solid 5px $primary-color;
   border-radius: 16px;
   text-align: center;
-  background-image: linear-gradient($color-button1, $color-button1);
+  background-image: linear-gradient($color-button3, $color-button4);
   /*background-image: linear-gradient(#f6ad55, #e1840b);*/
 }
 
 .main-button:hover {
-  background-image: linear-gradient($color-button1, $color-button1);
-  border: solid 5px #eaeaea;
+  background-image: linear-gradient($color-button4, $color-button4);
+  border: solid 5px $color-bg-opacity3;
 }
 
 .main-button__name {
