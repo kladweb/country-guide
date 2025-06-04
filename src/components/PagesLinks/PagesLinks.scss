@@ -1,14 +1,16 @@
+@import "../../styles/variables.scss";
+
 .PageLink {
   position: relative;
   margin-right: 1.5rem;
   font-size: 1.3rem;
-  color: #b1091d;
+  color: $color-menu1;
   text-decoration: none;
   transition: color .5s;
   vertical-align: middle;
 
   &:hover {
-    color: #f30e29;
+    color: $color-menu2;
   }
 }
 
@@ -26,8 +28,8 @@
   font-size: 0.8rem;
   line-height: 1.2rem;
   font-weight: 400;
-  color: yellow;
-  border: solid 1px yellow;
+  color: $border-color1;
+  border: solid 1px $border-color1;
   border-radius: 50%;
   text-align: center;
 }
