@@ -1,3 +1,5 @@
+@import "../../styles/variables.scss";
+
 .userNameWrapper{
   margin: 2rem auto 3rem;
   text-align: center;
@@ -9,7 +11,7 @@
   width: fit-content;
   font-size: 2rem;
   font-weight: 500;
-  color: yellow;
+  color: $border-color1;
   cursor: text;
   /*color: #b1091d;*/
 }
@@ -28,7 +30,7 @@
   width: 1.4rem;
   height: 1.4rem;
   margin: 0 0.5rem;
-  accent-color: rgba(20, 161, 20, 0.78);
+  accent-color: $accent-color;
 
   &:not(:checked) {
     opacity: 0.2;
@@ -37,7 +39,7 @@
 
 .shareDescription {
   font-size: 1.5rem;
-  color: #eaeaea;
+  color: $primary-color;
 }
 
 .logoutButton {
@@ -47,9 +49,9 @@
   text-align: center;
   font-size: 1.5rem;
   font-weight: 400;
-  color: #61ff10;
-  background: #b1091d;
-  border: 2px solid #b1091d;
+  color: $highlight-color;
+  background: $color-menu1;
+  border: 2px solid $color-menu1;
   border-radius: 0.8rem;
   opacity: 0.8;
   cursor: pointer;
