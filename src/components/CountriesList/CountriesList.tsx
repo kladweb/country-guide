@@ -95,8 +95,7 @@ export const CountriesList = () => {
     />
   );
 
-  console.log(isVisited);
-  console.log(parentWidth);
+  console.log(countriesCurrent);
 
   return (
     <>
@@ -114,7 +113,8 @@ export const CountriesList = () => {
           isVisited &&
           <div className='globe_container'>
             <GlobeCountries
-              listCountries={countriesCurrent.map(country => country.code)}
+              listCodes={countriesCurrent.map(country => country.code.toLowerCase())}
+              listNames={countriesCurrent.map(country => country.name.toLowerCase())}
               parentWidth={parentWidth}
             />
           </div>

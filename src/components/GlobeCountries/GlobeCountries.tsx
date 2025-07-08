@@ -3,11 +3,12 @@ import React, { useLayoutEffect, useRef, useState } from "react";
 import variables from '../../styles/_variables.scss';
 
 interface IGlobeProps {
-  listCountries: string[];
+  listCodes: string[];
+  listNames: string[];
   parentWidth: number;
 }
 
-const GlobeCountries: React.FC<IGlobeProps> = ({parentWidth, listCountries}) => {
+const GlobeCountries: React.FC<IGlobeProps> = ({parentWidth, listCodes, listNames}) => {
   const [polygons, setPolygons] = useState([]);
   const globeRef = useRef<any>(null);
 
@@ -28,14 +29,15 @@ const GlobeCountries: React.FC<IGlobeProps> = ({parentWidth, listCountries}) => 
       height={parentWidth < 900 ? parentWidth : 900}
       polygonsData={polygons}
       polygonCapColor={(d: any) => {
-        // console.log(d.properties);
-        return listCountries.includes(d.properties.ISO_A2.toLowerCase()) ?
+        console.log(d.properties);
+        return (listCodes.includes(d.properties.ISO_A2.toLowerCase()) ||
+          listNames.includes(d.properties.BRK_NAME.toLowerCase())) ?
           variables.colorMenu1 :
           variables.accentColor;
       }}
       polygonSideColor={() => variables.colorButton}
       polygonStrokeColor={() => variables.colorButton}
-      polygonAltitude={() => 0.03}
+      polygonAltitude={() => 0.02}
       globeImageUrl="/img/shared/earth-day.jpg"
       // bumpImageUrl="/img/shared/earth-topology.png"
       backgroundColor='rgba(0,0,0,0)'
