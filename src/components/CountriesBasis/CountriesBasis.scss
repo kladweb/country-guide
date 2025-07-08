@@ -1,4 +1,4 @@
-@import "../../styles/variables.scss";
+@import "../../styles/variables";
 
 $background-gradient: linear-gradient($background-color1, $background-color1),
 url(../../../public/img/background/background_01.jpg);
@@ -26,7 +26,7 @@ url(../../../public/img/background/background_01.jpg);
 
 .CountriesGroup {
   width: auto;
-  padding: 2rem 0 7rem;
+  padding: 2rem 0 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -115,7 +115,7 @@ url(../../../public/img/background/background_01.jpg);
 
 @media (max-width: 1080px) {
   .CountriesGroup {
-    padding-bottom: 4rem;
+    padding-bottom: 1rem;
   }
 
   .navPages {
@@ -126,13 +126,13 @@ url(../../../public/img/background/background_01.jpg);
 
 @media (max-width: 775px) {
   .CountriesGroup {
-    padding-bottom: 7rem;
+    padding-bottom: 2rem;
   }
 }
 
 @media (max-width: 600px) and (orientation: portrait) {
   .navPages {
-    padding-top: 2rem;
+    padding-top: 3rem;
     font-size: 0.75rem;
 
     &-links {
@@ -144,6 +144,6 @@ url(../../../public/img/background/background_01.jpg);
 
 @media (max-width: 360px) and (orientation: portrait) {
   .CountriesGroup {
-    padding-bottom: 8rem;
+    padding-bottom: 4rem;
   }
 }
