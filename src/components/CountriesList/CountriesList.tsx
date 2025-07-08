@@ -1,4 +1,4 @@
-import React from "react";
+import React, { RefObject, useLayoutEffect, useRef, useState } from "react";
 import { Outlet, useNavigate, useParams } from 'react-router-dom';
 import Country from './Country';
 import { setOpenInfoBar } from "../../redux/isOpenInfoBarSlice";
@@ -6,6 +6,7 @@ import { updateFavData } from "../../redux/favCountriesSlice";
 import { RootState, useAppDispatch, useAppSelector } from "../../redux/store";
 import { useDatabase } from "../../hooks/database";
 import type { ICountries } from "../../types/globalTypes";
+import GlobeCountries from "../GlobeCountries/GlobeCountries";
 
 export const CountriesList = () => {
   const navigate = useNavigate();
@@ -22,6 +23,22 @@ export const CountriesList = () => {
   const page = params.part;
   const isVisited = page === 'visited';
   const countriesCurrent: ICountries[] = isVisited ? favCountriesObj : countries;
+  const parentRef: RefObject<any> = useRef(null);
+  const [parentWidth, setParentWidth] = useState(0);
+
+  const updateParentWidth = () => {
+    setParentWidth(parentRef.current.getBoundingClientRect().width);
+  }
+
+  useLayoutEffect(() => {
+    if (parentRef.current) {
+      updateParentWidth();
+    }
+    window.addEventListener('resize', updateParentWidth);
+    return () => {
+      window.removeEventListener('resize', updateParentWidth);
+    }
+  }, []);
 
   const deleteFavCountry = function (code: string,
                                      showStar: boolean,
@@ -78,17 +95,31 @@ export const CountriesList = () => {
     />
   );
 
+  console.log(isVisited);
+  console.log(parentWidth);
+
   return (
-    <div className='CountriesGroup'>
-      {isVisited &&
-        <>
-          {(countriesCurrent.length <= 0) &&
-            <p className='navPages'>The list of visited countries is empty...</p>
-          }
-        </>
-      }
-      {countriesElements}
-      <Outlet/>
-    </div>
+    <>
+      <div ref={parentRef} className='CountriesGroup'>
+        {isVisited &&
+          <>
+            {(countriesCurrent.length <= 0) &&
+              <p className='navPages'>The list of visited countries is empty...</p>
+            }
+          </>
+        }
+        {countriesElements}
+        <Outlet/>
+        {
+          isVisited &&
+          <div className='globe_container'>
+            <GlobeCountries
+              listCountries={countriesCurrent.map(country => country.code)}
+              parentWidth={parentWidth}
+            />
+          </div>
+        }
+      </div>
+    </>
   )
 }

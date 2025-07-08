@@ -1,0 +1,51 @@
+import ReactGlobe from 'react-globe.gl';
+import React, { useLayoutEffect, useRef, useState } from "react";
+import variables from '../../styles/_variables.scss';
+
+interface IGlobeProps {
+  listCountries: string[];
+  parentWidth: number;
+}
+
+const GlobeCountries: React.FC<IGlobeProps> = ({parentWidth, listCountries}) => {
+  const [polygons, setPolygons] = useState([]);
+  const globeRef = useRef<any>(null);
+
+  useLayoutEffect(() => {
+    globeRef.current.controls().enableZoom = false;
+    fetch('/datasets/ne_110m_admin_0_countries.geojson')
+      .then(res => res.json())
+      .then(data => {
+        // console.log(data);
+        setPolygons(data.features);
+      });
+  }, [parentWidth]);
+
+  return (
+    <ReactGlobe
+      ref={globeRef}
+      width={parentWidth}
+      height={parentWidth < 900 ? parentWidth : 900}
+      polygonsData={polygons}
+      polygonCapColor={(d: any) => {
+        // console.log(d.properties);
+        return listCountries.includes(d.properties.ISO_A2.toLowerCase()) ?
+          variables.colorMenu1 :
+          variables.accentColor;
+      }}
+      polygonSideColor={() => variables.colorButton}
+      polygonStrokeColor={() => variables.colorButton}
+      polygonAltitude={() => 0.03}
+      globeImageUrl="/img/shared/earth-day.jpg"
+      // bumpImageUrl="/img/shared/earth-topology.png"
+      backgroundColor='rgba(0,0,0,0)'
+      labelsData={polygons}
+      labelText={(d: any) => d.properties.ISO_A2}
+      // labelSize={2}
+      labelColor={'blue'}
+      // labelResolution={2}
+    />
+  );
+};
+
+export default GlobeCountries;

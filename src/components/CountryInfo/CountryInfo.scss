@@ -1,4 +1,4 @@
-@import "../../styles/variables.scss";
+@import "../../styles/variables";
 
 .country-info {
   width: 100%;
@@ -10,6 +10,7 @@
   background: $countries-links;
   border-top: solid 5px $color-light;
   border-bottom: solid 5px $color-light;
+  z-index: 10;
 }
 
 .show {

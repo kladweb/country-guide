@@ -21,3 +21,11 @@ $color-button4: #e1840b;
 $color-button5: #55362d;
 $color-menu1: #b1091d;
 $color-menu2: #f30e29;
+
+:export {
+  highlightColor: $highlight-color;
+  accentColor: $accent-color;
+  borderColor1: $border-color1;
+  colorButton: $color-button1;
+  colorMenu1: $color-menu1
+}

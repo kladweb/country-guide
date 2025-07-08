@@ -1,4 +1,4 @@
-@import "../../styles/variables.scss";
+@import "../../styles/variables";
 
 .land-enter {
   opacity: 0;
@@ -109,6 +109,12 @@
 .isFav {
   border-color: $border-color1;
   transition: 0.5s;
+}
+
+.globe_container {
+  margin: 0 auto 2rem;
+  //overflow: hidden;
+  text-align: center;
 }
 
 @media (max-width: 1080px) {
