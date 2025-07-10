@@ -10,6 +10,7 @@ import { useDatabase } from "../hooks/database";
 import firebase from "firebase/compat/app";
 import User = firebase.User;
 import type { ICurrUser } from "../types/globalTypes";
+import '../components/Travelers/travelers.scss';
 
 export const PageLoginLogout = () => {
   const dispatch = useAppDispatch();

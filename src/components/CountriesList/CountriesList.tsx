@@ -6,7 +6,7 @@ import { updateFavData } from "../../redux/favCountriesSlice";
 import { RootState, useAppDispatch, useAppSelector } from "../../redux/store";
 import { useDatabase } from "../../hooks/database";
 import type { ICountries } from "../../types/globalTypes";
-import GlobeCountries from "../GlobeCountries/GlobeCountries";
+import { GlobeCountries } from "../GlobeCountries/GlobeCountries";
 
 export const CountriesList = () => {
   const navigate = useNavigate();

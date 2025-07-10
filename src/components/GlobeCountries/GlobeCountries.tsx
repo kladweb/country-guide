@@ -8,7 +8,7 @@ interface IGlobeProps {
   parentWidth: number;
 }
 
-const GlobeCountries: React.FC<IGlobeProps> = ({parentWidth, listCodes, listNames}) => {
+export const GlobeCountries: React.FC<IGlobeProps> = ({parentWidth, listCodes, listNames}) => {
   const [polygons, setPolygons] = useState([]);
   const globeRef = useRef<any>(null);
 
@@ -38,16 +38,14 @@ const GlobeCountries: React.FC<IGlobeProps> = ({parentWidth, listCodes, listName
       polygonSideColor={() => variables.colorButton}
       polygonStrokeColor={() => variables.colorButton}
       polygonAltitude={() => 0.02}
-      globeImageUrl="/img/shared/earth-day.jpg"
+      globeImageUrl={"/img/shared/earth-day.jpg"}
       // bumpImageUrl="/img/shared/earth-topology.png"
-      backgroundColor='rgba(0,0,0,0)'
+      backgroundColor={'rgba(0,0,0,0)'}
       labelsData={polygons}
       labelText={(d: any) => d.properties.ISO_A2}
       // labelSize={2}
       labelColor={'blue'}
       // labelResolution={2}
     />
-  );
-};
-
-export default GlobeCountries;
+  )
+}
