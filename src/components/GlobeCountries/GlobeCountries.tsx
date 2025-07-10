@@ -29,7 +29,6 @@ export const GlobeCountries: React.FC<IGlobeProps> = ({parentWidth, listCodes, l
       height={parentWidth < 900 ? parentWidth : 900}
       polygonsData={polygons}
       polygonCapColor={(d: any) => {
-        console.log(d.properties);
         return (listCodes.includes(d.properties.ISO_A2.toLowerCase()) ||
           listNames.includes(d.properties.BRK_NAME.toLowerCase())) ?
           variables.colorMenu1 :

@@ -31,7 +31,8 @@ export const PagesLinks = () => {
           email: getUser.email,
           displayName: getUser.displayName,
           photoURL: getUser.photoURL,
-          uid: getUser.uid,
+          // uid: getUser.uid,
+          uid: (getUser.email) ? getUser.email.replace(/[@.]/g, "") : getUser.uid,
         };
         dispatch(setCurrUser({currUser: user}));
       } else {

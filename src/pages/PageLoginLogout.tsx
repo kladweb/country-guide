@@ -41,7 +41,8 @@ export const PageLoginLogout = () => {
           email: (getUser.email) ? getUser.email : '',
           displayName: (getUser.displayName) ? getUser.displayName : '',
           photoURL: (getUser.photoURL) ? getUser.photoURL : '',
-          uid: getUser.uid,
+          // uid: getUser.uid,
+          uid: (getUser.email) ? getUser.email.replace(/[@.]/g, "") : getUser.uid,
         };
         // user.email = getUser.email;
         // user.displayName = getUser.displayName;
