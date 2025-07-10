@@ -5,7 +5,7 @@ import { PageCountries } from '../pages/PageCountries';
 import { CountryInfoBar } from '../pages/CountryInfoBar';
 
 const PageLoginLogout = lazy(() => import("../pages/PageLoginLogout")
-  .then((module) => ({default: module. PageLoginLogout})));
+  .then((module) => ({default: module.PageLoginLogout})));
 
 const PageTravelers = lazy(() => import("../pages/PageTravelers")
   .then((module) => ({default: module.PageTravelers})));

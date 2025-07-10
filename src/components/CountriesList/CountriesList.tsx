@@ -95,8 +95,6 @@ export const CountriesList = () => {
     />
   );
 
-  console.log(countriesCurrent);
-
   return (
     <>
       <div ref={parentRef} className='CountriesGroup'>
