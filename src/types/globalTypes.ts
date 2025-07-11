@@ -11,6 +11,7 @@ export interface ICurrUser {
   displayName: string;
   photoURL: string;
   uid: string;
+  id: string;
 }
 
 interface ICurrUserObj {

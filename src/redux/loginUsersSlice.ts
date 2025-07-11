@@ -7,6 +7,7 @@ interface IStateLoginUsers {
   userPhoto: string | null;
   idCurrUser: string | null;
   isAllowShowVisited: boolean | null;
+  userUID: string | null;
 }
 
 const initialState: IStateLoginUsers = {
@@ -14,7 +15,8 @@ const initialState: IStateLoginUsers = {
   userName: "",
   userPhoto: null,
   idCurrUser: null,
-  isAllowShowVisited: null
+  isAllowShowVisited: null,
+  userUID: null
 }
 
 export const loginUserSlice = createSlice({
@@ -35,7 +37,10 @@ export const loginUserSlice = createSlice({
     },
     setAllowShowVisited: (state, action) => {
       state.isAllowShowVisited = action.payload;
-    }
+    },
+    setUserUID: (state, action) => {
+      state.userUID = action.payload;
+    },
   }
 });
 
@@ -43,7 +48,8 @@ export const {
   setCurrUser,
   setUserName,
   setUserPhoto,
-  setAllowShowVisited
+  setAllowShowVisited,
+  setUserUID
 } = loginUserSlice.actions;
 
 export default loginUserSlice.reducer;

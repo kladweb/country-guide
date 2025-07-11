@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { child, get, ref, set } from "firebase/database";
 import { database } from "../firebase/firebase";
 import { updateFavData } from "../redux/favCountriesSlice";
-import { setAllowShowVisited, setUserName, setUserPhoto } from "../redux/loginUsersSlice";
+import { setAllowShowVisited, setUserName, setUserPhoto, setUserUID } from "../redux/loginUsersSlice";
 import { IAllUserCountries, updateAllUsersCountries } from "../redux/allUsersCountriesSlice";
 import { AppDispatch, RootState } from "../redux/store";
 import { updateCurrentData, updateData, updateLoadState } from "../redux/countriesSlice";
@@ -10,7 +10,8 @@ import { updateCurrentData, updateData, updateLoadState } from "../redux/countri
 
 export const useDatabase = () => {
   const currUser = useSelector((state: RootState) => state.currUser.currUser);
-  const userId = currUser ? currUser.uid : null;
+  const userId = currUser ? currUser.id : null;
+  const userUID = currUser ? currUser.uid : null;
 
   function writeUserCountries(countries: string | null) {
     if (userId) {
@@ -107,6 +108,32 @@ export const useDatabase = () => {
     }
   }
 
+  function writeUserUID(userUID: string) {
+    if (userId) {
+      set(ref(database, `users/${userId}/userUID/`), userUID);
+    } else {
+      console.log('No auth !');
+    }
+  }
+
+  function readUserUID(dispatch: AppDispatch) {
+    if (userId) {
+      const dbRef = ref(database);
+      get(child(dbRef, `users/${userId}/userUID`)).then((snapshot) => {
+        if (snapshot.exists()) {
+          const userUIDCurrent = snapshot.val();
+          if (userUID && userUIDCurrent !== userUID) {
+            dispatch(setUserUID(userUID));
+            writeUserUID(userUID);
+            console.log("ШЛЯПА")
+          } else {
+            dispatch(setUserUID(userUIDCurrent));
+          }
+        }
+      });
+    }
+  }
+
   function writeUserPhoto(userPhoto: string) {
     if (userId) {
       set(ref(database, `users/${userId}/userPhoto/`), userPhoto);
@@ -122,7 +149,6 @@ export const useDatabase = () => {
         if (snapshot.exists()) {
           const userPhoto = snapshot.val();
           dispatch(setUserPhoto(userPhoto));
-          // dispatch(setUserName(userName));
         }
       });
     }
@@ -169,6 +195,7 @@ export const useDatabase = () => {
     readUserName,
     writeUserPhoto,
     readUserPhoto,
+    readUserUID,
     readAllUsers
   };
 }
