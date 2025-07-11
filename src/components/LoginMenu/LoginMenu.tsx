@@ -7,7 +7,7 @@ import { ICurrUser } from "../../types/globalTypes";
 
 export const LoginMenu = () => {
   const dispatch = useAppDispatch();
-  const {readUserCountries, readUserPermissionVisited, readUserName, readUserPhoto} = useDatabase();
+  const {readUserCountries, readUserPermissionVisited, readUserName, readUserPhoto, readUserUID} = useDatabase();
   const currUser: ICurrUser | null = useAppSelector(state => state.currUser.currUser);
   const userName = useAppSelector(state => state.currUser.userName);
   const currUserName = (currUser) ? (userName ? userName : currUser.displayName) : '';
@@ -19,6 +19,7 @@ export const LoginMenu = () => {
         readUserPermissionVisited(dispatch);
         readUserName(dispatch);
         readUserPhoto(dispatch);
+        readUserUID(dispatch);
       }
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [currUser]);
