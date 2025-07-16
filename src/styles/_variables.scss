@@ -23,6 +23,8 @@ $color-menu1: #b1091d;
 $color-menu2: #f30e29;
 
 :export {
+  primaryColor: $primary-color;
+  secondaryColor: $secondary-color;
   highlightColor: $highlight-color;
   accentColor: $accent-color;
   borderColor1: $border-color1;
