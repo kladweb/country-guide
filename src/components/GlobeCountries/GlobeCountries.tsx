@@ -29,10 +29,11 @@ export const GlobeCountries: React.FC<IGlobeProps> = ({parentWidth, listCodes, l
       height={parentWidth < 900 ? parentWidth : 900}
       polygonsData={polygons}
       polygonCapColor={(d: any) => {
-        return (listCodes.includes(d.properties.ISO_A2.toLowerCase()) ||
-          listNames.includes(d.properties.BRK_NAME.toLowerCase())) ?
-          variables.colorMenu1 :
-          variables.accentColor;
+        const isVisited = listCodes.includes(d.properties.ISO_A2.toLowerCase()) ||
+          listNames.includes(d.properties.BRK_NAME.toLowerCase());
+        const isAntarctica = d.properties.ISO_A2.toLowerCase() === 'aq' ||
+          d.properties.BRK_NAME.toLowerCase() === 'aq';
+        return isVisited ? variables.colorMenu1 : isAntarctica ? variables.primaryColor : variables.accentColor;
       }}
       polygonSideColor={() => variables.colorButton}
       polygonStrokeColor={() => variables.colorButton}
